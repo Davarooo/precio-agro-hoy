@@ -32,6 +32,24 @@ def obtener_falso(url):
     return respuesta(simbolo)
 
 
+# Respuesta real de CNBC del 17 de noviembre de 2026 (recortada)
+CNBC_RESPUESTA = {"FormattedQuoteResult": {"FormattedQuote": [
+    {"symbol": "@CC.1", "name": "Cocoa (Mar'27)", "last": "5,177.00", "last_time": "2026-11-17T00:00:00.000-0500",
+     "settlePrice": "5177.00", "settleDate": "2026-11-17"},
+    {"symbol": "@KC.1", "name": "Coffee (Mar'27)", "last": "281.40", "last_time": "2026-11-17T00:00:00.000-0500",
+     "settlePrice": "281.40", "settleDate": "2026-11-17"},
+    {"symbol": "COP=", "last": "3,304.81", "last_time": "2026-11-17T18:14:00.000-0500"},
+    {"symbol": "PEN=", "last": "3.4103", "last_time": "2026-11-17T18:48:00.000-0500"},
+    {"symbol": "DOP=", "last": "60.27", "last_time": "2026-11-17T18:22:00.000-0500"},
+]}}
+
+
+def obtener_cnbc(url):
+    if "cnbc.com" in url:
+        return CNBC_RESPUESTA
+    raise AssertionError("no debería llegar a Yahoo")
+
+
 class PruebasBolsa(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
@@ -70,6 +88,30 @@ class PruebasBolsa(unittest.TestCase):
         bolsa.time.sleep = lambda s: None
         self.assertEqual(bolsa.main([], obtener=malo), 1)
         self.assertFalse((bolsa.DATOS / "cacao.json").exists())
+
+    def test_cnbc_primero_y_variacion_desde_historico(self):
+        (bolsa.DATOS / "cacao-historico.json").write_text(json.dumps(
+            [{"fecha": "2026-11-16", "usd_tonelada": 5100.0}]))
+        self.assertEqual(bolsa.main([], obtener=obtener_cnbc), 0)
+        cacao = json.loads((bolsa.DATOS / "cacao.json").read_text())
+        self.assertEqual(cacao["usd_tonelada"], 5177.0)
+        self.assertEqual(cacao["fecha"], "2026-11-17")
+        self.assertEqual(cacao["variacion_usd_tonelada"], 77.0)
+        self.assertIn("CNBC", cacao["fuente"])
+        self.assertEqual(cacao["paises"]["colombia"]["tasa"], 3304.81)
+        cafe = json.loads((bolsa.DATOS / "cafe-peru.json").read_text())
+        self.assertEqual(cafe["usc_libra"], 281.4)
+        self.assertNotIn("variacion_pct", cafe)  # sin histórico previo no inventa variación
+
+    def test_si_cnbc_falla_usa_yahoo(self):
+        def mixto(url):
+            if "cnbc.com" in url:
+                raise OSError("HTTP Error 403")
+            return obtener_falso(url)
+        self.assertEqual(bolsa.main([], obtener=mixto), 0)
+        cacao = json.loads((bolsa.DATOS / "cacao.json").read_text())
+        self.assertIn("Yahoo", cacao["fuente"])
+        self.assertEqual(cacao["usd_tonelada"], 5184.0)
 
     def test_ignora_cierres_vacios(self):
         d = respuesta("CC=F", [5066.0, 5119.0, 5042.0, None])
