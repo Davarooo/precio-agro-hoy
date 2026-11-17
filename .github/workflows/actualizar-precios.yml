@@ -1,0 +1,40 @@
+name: Actualizar precios
+
+on:
+  schedule:
+    # 22:30 UTC = 5:30 p. m. hora Colombia, de lunes a viernes
+    - cron: "30 22 * * 1-5"
+    # Segundo intento a las 12:30 UTC (7:30 a. m.) por si la Federacion publico tarde
+    - cron: "30 12 * * 1-6"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  cafe-colombia:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Pruebas del lector de PDF
+        run: python -m unittest discover -s tests -v
+
+      - name: Descargar y procesar precio del cafe
+        run: python scripts/cafe_colombia.py
+
+      - name: Guardar cambios
+        run: |
+          git config user.name "precio-agro-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "Sin cambios en los datos"
+          else
+            git commit -m "Precio del café $(date -u +%Y-%m-%d)"
+            git push
+          fi
