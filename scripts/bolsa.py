@@ -3,7 +3,8 @@
 Dominicana y Colombia.
 
 Lee el último cierre de los futuros en la Bolsa de Nueva York (ICE) y las tasas
-de cambio del día desde Yahoo Finanzas, y escribe:
+de cambio del día (primero desde CNBC, que responde en una sola consulta; si
+falla, desde Yahoo Finanzas), y escribe:
   data/cacao.json, data/cacao-historico.json
   data/cafe-peru.json, data/cafe-peru-historico.json
 
@@ -26,6 +27,10 @@ DATOS = RAIZ / "data"
 MAX_HISTORICO = 800
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 HOSTS = ("query1.finance.yahoo.com", "query2.finance.yahoo.com")
+# símbolo de CNBC -> símbolo interno (el de Yahoo)
+CNBC = {"@CC.1": "CC=F", "@KC.1": "KC=F", "COP=": "COP=X", "PEN=": "PEN=X", "DOP=": "DOP=X"}
+CNBC_URL = ("https://quote.cnbc.com/quote-html-webservice/restQuote/symbolType/symbol"
+            "?symbols={}&requestMethod=itv&noform=1&partnerId=2&fund=1&exthrs=1&output=json")
 
 # símbolo de Yahoo -> (mínimo, máximo) aceptables
 SIMBOLOS = {
@@ -45,6 +50,51 @@ def descargar_json(url: str) -> dict:
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json"})
     with urllib.request.urlopen(req, timeout=40) as resp:
         return json.loads(resp.read().decode("utf-8"))
+
+
+def numero(texto) -> float:
+    return float(str(texto).replace(",", ""))
+
+
+def cotizaciones_cnbc(obtener=descargar_json) -> dict:
+    """Los cinco precios en una consulta. Para los futuros usa el precio de
+    liquidación del día (settlePrice) y su fecha."""
+    url = CNBC_URL.format("|".join(CNBC))
+    citas = obtener(url)["FormattedQuoteResult"]["FormattedQuote"]
+    salida = {}
+    for q in citas:
+        simbolo = CNBC.get(q.get("symbol"))
+        if not simbolo:
+            continue
+        if q.get("settlePrice") and q.get("settleDate"):
+            valor, fecha = numero(q["settlePrice"]), q["settleDate"][:10]
+        else:
+            valor, fecha = numero(q["last"]), q["last_time"][:10]
+        minimo, maximo = SIMBOLOS[simbolo]
+        if not (minimo <= valor <= maximo):
+            raise ValueError(f"{simbolo}: valor fuera de rango {valor}")
+        salida[simbolo] = {"valor": valor, "fecha": fecha, "anterior": None, "contrato": q.get("name", "")}
+    faltan = [s for s in SIMBOLOS if s not in salida]
+    if faltan:
+        raise ValueError(f"CNBC no trajo {faltan}")
+    return salida
+
+
+def todas_las_cotizaciones(obtener=descargar_json):
+    """Devuelve (cotizaciones, nombre de la fuente)."""
+    try:
+        return cotizaciones_cnbc(obtener), "CNBC"
+    except Exception as exc:
+        print(f"Aviso: CNBC no respondió bien ({exc}); pruebo Yahoo Finanzas")
+    return {s: cotizacion(s, obtener) for s in SIMBOLOS}, "Yahoo Finanzas"
+
+
+def anterior_del_historico(nombre: str, campo: str, fecha: str):
+    ruta = DATOS / f"{nombre}-historico.json"
+    if not ruta.exists():
+        return None
+    filas = [h for h in json.loads(ruta.read_text(encoding="utf-8")) if h.get("fecha", "") < fecha and h.get(campo)]
+    return float(filas[-1][campo]) if filas else None
 
 
 def cotizacion(simbolo: str, obtener=descargar_json) -> dict:
@@ -83,7 +133,7 @@ def redondo(x: float, n: int = 2) -> float:
     return round(x + 0.0, n)
 
 
-def armar_cacao(cc: dict, fx: dict, ahora: str) -> dict:
+def armar_cacao(cc: dict, fx: dict, ahora: str, via: str = "Yahoo Finanzas") -> dict:
     usd_t = cc["valor"]
     usd_kg = usd_t / 1000
     paises = {
@@ -100,7 +150,7 @@ def armar_cacao(cc: dict, fx: dict, ahora: str) -> dict:
         "producto": "cacao",
         "fecha": cc["fecha"],
         "actualizado": ahora,
-        "fuente": "Futuros de cacao en la Bolsa de Nueva York (ICE) y tasas de cambio, vía Yahoo Finanzas",
+        "fuente": f"Futuros de cacao en la Bolsa de Nueva York (ICE) y tasas de cambio, vía {via}",
         "contrato": cc["contrato"],
         "usd_tonelada": redondo(usd_t, 2),
         "paises": paises,
@@ -111,7 +161,7 @@ def armar_cacao(cc: dict, fx: dict, ahora: str) -> dict:
     return datos
 
 
-def armar_cafe_peru(kc: dict, fx: dict, ahora: str) -> dict:
+def armar_cafe_peru(kc: dict, fx: dict, ahora: str, via: str = "Yahoo Finanzas") -> dict:
     usd_lb = kc["valor"] / 100
     usd_kg = usd_lb * LB_POR_KG
     tasa = fx["PEN=X"]["valor"]
@@ -120,7 +170,7 @@ def armar_cafe_peru(kc: dict, fx: dict, ahora: str) -> dict:
         "pais": "peru",
         "fecha": kc["fecha"],
         "actualizado": ahora,
-        "fuente": "Futuros de café arábica (contrato C) en la Bolsa de Nueva York (ICE) y tasa de cambio, vía Yahoo Finanzas",
+        "fuente": f"Futuros de café arábica (contrato C) en la Bolsa de Nueva York (ICE) y tasa de cambio, vía {via}",
         "contrato": kc["contrato"],
         "usc_libra": redondo(kc["valor"], 2),
         "tasa_pen": redondo(tasa, 4),
@@ -148,23 +198,28 @@ def guardar_con_historico(nombre: str, datos: dict, fila: dict) -> None:
 def main(argv, obtener=descargar_json) -> int:
     ahora = datetime.now(timezone.utc).replace(microsecond=0).isoformat()
     try:
-        cot = {s: cotizacion(s, obtener) for s in SIMBOLOS}
+        cot, via = todas_las_cotizaciones(obtener)
     except Exception as exc:
         print(f"ERROR: {exc}")
         return 1
     fx = {s: cot[s] for s in ("COP=X", "PEN=X", "DOP=X")}
+    # CNBC no da un cierre anterior confiable: se toma del histórico propio
+    if cot["CC=F"]["anterior"] is None:
+        cot["CC=F"]["anterior"] = anterior_del_historico("cacao", "usd_tonelada", cot["CC=F"]["fecha"])
+    if cot["KC=F"]["anterior"] is None:
+        cot["KC=F"]["anterior"] = anterior_del_historico("cafe-peru", "usc_libra", cot["KC=F"]["fecha"])
 
-    cacao = armar_cacao(cot["CC=F"], fx, ahora)
+    cacao = armar_cacao(cot["CC=F"], fx, ahora, via)
     guardar_con_historico("cacao", cacao, {
         "fecha": cacao["fecha"], "usd_tonelada": cacao["usd_tonelada"],
         "COP": fx["COP=X"]["valor"], "PEN": fx["PEN=X"]["valor"], "DOP": fx["DOP=X"]["valor"],
     })
-    cafe = armar_cafe_peru(cot["KC=F"], fx, ahora)
+    cafe = armar_cafe_peru(cot["KC=F"], fx, ahora, via)
     guardar_con_historico("cafe-peru", cafe, {
         "fecha": cafe["fecha"], "usc_libra": cafe["usc_libra"], "PEN": cafe["tasa_pen"],
         "precio_quintal": cafe["precio_quintal"],
     })
-    print(f"Cacao {cacao['fecha']}: US$ {cacao['usd_tonelada']}/t | Café {cafe['fecha']}: {cafe['usc_libra']} c/lb")
+    print(f"[{via}] Cacao {cacao['fecha']}: US$ {cacao['usd_tonelada']}/t | Café {cafe['fecha']}: {cafe['usc_libra']} c/lb")
     return 0
 
 
