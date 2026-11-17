@@ -1,0 +1,393 @@
+<!-- ===== Precio Agro Hoy: café Colombia. Pegar en la vista HTML de una página de Blogger ===== -->
+<!-- Cambia SOLO estas dos líneas con tu usuario y repositorio de GitHub -->
+<script>
+  window.PAH_CONFIG = {
+    datos: "https://raw.githubusercontent.com/TU_USUARIO/precio-agro-hoy/main/data/cafe-colombia.json",
+    historico: "https://raw.githubusercontent.com/TU_USUARIO/precio-agro-hoy/main/data/cafe-colombia-historico.json"
+  };
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&family=Cabin+Sketch:wght@700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  .pah{
+    --pizarra:#1F2D27; --tiza:#EEEDE4; --tiza-suave:#B9C2BB; --madera:#6E4529; --madera-luz:#8C5C38;
+    --cereza:#B0272F; --hoja:#2F6B40; --tinta:#1E2A24; --suave:#5E6A63; --regla:#D6DCD7; --fondo-form:#EDF1EC;
+    font-family:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+    font-size:17px; color:var(--tinta); line-height:1.6; max-width:760px; margin:0 auto;
+    font-variant-numeric:tabular-nums;
+  }
+  .pah *{box-sizing:border-box}
+  .pah p{margin:.35rem 0}
+  .pah h2{font-family:"Barlow Condensed","Arial Narrow",sans-serif;font-weight:600;font-size:1.85rem;line-height:1.15;
+    letter-spacing:-.01em;margin:3rem 0 .4rem;color:var(--tinta)}
+  .pah .intro{color:var(--suave);max-width:60ch;margin-bottom:1rem}
+  .pah .nota{font-size:.88rem;color:var(--suave)}
+  .pah .sube{color:var(--hoja)} .pah .baja{color:var(--cereza)}
+  .pah :focus-visible{outline:3px solid #E0A526;outline-offset:2px}
+
+  /* ---------- Pizarra ---------- */
+  .pah .pizarra{position:relative;background-color:var(--pizarra);color:var(--tiza);
+    background-image:radial-gradient(ellipse at 18% 30%,rgba(238,237,228,.07),transparent 55%),
+      radial-gradient(ellipse at 85% 75%,rgba(238,237,228,.05),transparent 50%);
+    border:12px solid var(--madera);border-bottom-width:20px;border-radius:6px;
+    box-shadow:inset 0 0 0 2px var(--madera-luz),inset 0 0 40px rgba(0,0,0,.35),0 2px 0 #4f3120;
+    padding:1.6rem 1.8rem 1.4rem}
+  .pah .pizarra::after{content:"";position:absolute;left:10%;bottom:-15px;width:64px;height:7px;border-radius:3px;
+    background:#E7E4D6;box-shadow:84px 0 0 #E9C46A} /* dos tizas sobre el borde */
+  .pah .pz-fecha{font-family:"Barlow Condensed",sans-serif;font-size:1.15rem;font-weight:500;color:var(--tiza-suave);margin:0}
+  .pah .pz-cifra{font-family:"Cabin Sketch","Barlow Condensed",sans-serif;font-weight:700;
+    font-size:clamp(3.1rem,12vw,5.4rem);line-height:1;margin:.5rem 0 0;letter-spacing:.01em;color:#F7F6EF}
+  .pah .pz-trazo{display:block;width:min(100%,430px);height:14px;margin:.1rem 0 .5rem}
+  .pah .pz-trazo path{fill:none;stroke:#E9C46A;stroke-width:3;stroke-linecap:round;opacity:.85}
+  .pah .pz-unidad{font-size:1.02rem;margin:0;color:var(--tiza)}
+  .pah #pah-variacion{font-family:"Barlow Condensed",sans-serif;font-size:1.2rem;font-weight:600;margin:.3rem 0 0;min-height:1.2em}
+  .pah .pizarra .sube{color:#8FD19E} .pah .pizarra .baja{color:#FF9C94}
+  .pah .pz-equiv{display:flex;flex-wrap:wrap;gap:.4rem 2.2rem;margin:1.2rem 0 0;padding:1rem 0 0;
+    border-top:2px dashed rgba(238,237,228,.28)}
+  .pah .pz-equiv div{min-width:7rem}
+  .pah .pz-equiv dt{font-size:.9rem;color:var(--tiza-suave)}
+  .pah .pz-equiv dd{margin:0;font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:1.6rem;line-height:1.2}
+  .pah .pz-fuente{font-size:.82rem;color:var(--tiza-suave);margin-top:1rem}
+  .pah .pz-fuente a{color:inherit}
+  @keyframes pah-tiza{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+  .pah .escribiendo{animation:pah-tiza .9s steps(14,end) both}
+  @media (prefers-reduced-motion:reduce){.pah .escribiendo{animation:none}}
+
+  /* ---------- Calculadora + tiquete ---------- */
+  .pah .calc{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;background:var(--fondo-form);
+    border-radius:4px;padding:1.4rem}
+  .pah label{display:block;font-weight:600;font-size:.95rem;margin:0 0 .25rem}
+  .pah .campo{margin-bottom:1rem}
+  .pah .par{display:grid;grid-template-columns:1.4fr 1fr;gap:.5rem}
+  .pah input,.pah select{width:100%;font:inherit;font-size:1.05rem;padding:.6rem .7rem;color:var(--tinta);
+    background:#fff;border:1.5px solid #AEB9B1;border-radius:3px}
+  .pah input:focus,.pah select:focus{border-color:var(--pizarra)}
+  .pah .tiquete{position:relative;background:#fff;font-family:"Courier Prime","Courier New",monospace;font-size:.92rem;
+    padding:1.1rem 1.1rem 1.6rem;box-shadow:0 1px 2px rgba(31,45,39,.18);align-self:start;
+    -webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 10px) no-repeat,
+      conic-gradient(from 135deg at 50% 0,#000 90deg,#0000 0) bottom/14px 10px repeat-x;
+            mask:linear-gradient(#000 0 0) top/100% calc(100% - 10px) no-repeat,
+      conic-gradient(from 135deg at 50% 0,#000 90deg,#0000 0) bottom/14px 10px repeat-x}
+  .pah .tq-titulo{font-weight:700;text-align:center;margin:0 0 .2rem}
+  .pah .tq-sub{text-align:center;color:var(--suave);font-size:.82rem;margin:0 0 .7rem}
+  .pah .tq-fila{display:flex;justify-content:space-between;gap:.8rem;padding:.12rem 0}
+  .pah .tq-fila span:last-child{text-align:right}
+  .pah .tq-sep{border-top:1.5px dashed #9AA49D;margin:.55rem 0}
+  .pah .tq-total{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;font-weight:700}
+  .pah #pah-total{font-size:1.45rem}
+  .pah .calc .nota{grid-column:1/-1;margin:0}
+
+  /* ---------- Ciudades ---------- */
+  .pah .desliza{overflow-x:auto}
+  .pah table{width:100%;border-collapse:collapse}
+  .pah th,.pah td{padding:.55rem .5rem;text-align:right;border-bottom:1px solid var(--regla)}
+  .pah th:first-child,.pah td:first-child{text-align:left;padding-left:0}
+  .pah th:last-child,.pah td:last-child{padding-right:0}
+  .pah th{font-weight:600;font-size:.88rem;color:var(--suave);border-bottom:2px solid var(--tinta)}
+  .pah td small{display:block;font-size:.8rem;color:var(--suave)}
+  .pah td small.sube{color:var(--hoja)} .pah td small.baja{color:var(--cereza)}
+
+  /* ---------- Escala de factores ---------- */
+  .pah .escala{list-style:none;margin:0;padding:0}
+  .pah .escala li{margin:0}
+  .pah .escala button{display:grid;grid-template-columns:4.6rem 1fr 7.4rem;align-items:center;gap:.7rem;width:100%;
+    font:inherit;color:inherit;text-align:left;background:none;border:0;border-bottom:1px solid var(--regla);
+    padding:.42rem 0;cursor:pointer}
+  .pah .escala button:hover .barra i{background:#7F8C84}
+  .pah .escala .f{font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:1.25rem;line-height:1}
+  .pah .escala .f small{display:block;font-family:"Barlow",sans-serif;font-weight:500;font-size:.72rem;color:var(--suave)}
+  .pah .escala .barra{height:12px;background:#E6EAE7;border-radius:1px;overflow:hidden}
+  .pah .escala .barra i{display:block;height:100%;background:#A7B2AB;transition:width .3s,background .2s}
+  .pah .escala .v{text-align:right;font-weight:500}
+  .pah .escala .elegido .f,.pah .escala .elegido .v{color:var(--cereza);font-weight:700}
+  .pah .escala .elegido .barra i{background:var(--cereza)}
+  .pah .escala .ref .barra i{background:var(--pizarra)}
+  .pah .escala .ref.elegido .barra i{background:var(--cereza)}
+
+  /* ---------- Histórico ---------- */
+  .pah svg{width:100%;height:auto;display:block}
+  .pah #pah-grafica{margin-bottom:1rem}
+
+  /* ---------- Preguntas ---------- */
+  .pah details{border-bottom:1px solid var(--regla)}
+  .pah details:first-of-type{border-top:2px solid var(--tinta)}
+  .pah summary{list-style:none;cursor:pointer;font-weight:600;padding:.8rem 2rem .8rem 0;position:relative}
+  .pah summary::-webkit-details-marker{display:none}
+  .pah summary::after{content:"+";position:absolute;right:.2rem;top:.55rem;font-size:1.4rem;font-weight:400;color:var(--suave)}
+  .pah details[open] summary::after{content:"−"}
+  .pah details p{max-width:64ch;padding-bottom:.9rem;margin:0}
+  .pah .aviso{display:inline-block;padding:.5rem .8rem;border:1.5px dashed #FF9C94;color:var(--tiza);font-family:"Barlow",sans-serif;font-size:.95rem;font-weight:500}
+
+  @media (max-width:600px){
+    .pah{font-size:16px}
+    .pah .pizarra::after{bottom:-12px;width:48px;height:6px;box-shadow:62px 0 0 #E9C46A}
+    .pah .pizarra{border-width:9px;border-bottom-width:16px;padding:1.2rem 1.1rem 1.1rem}
+    .pah .pz-equiv{gap:.6rem 1.4rem}
+    .pah .pz-equiv div{min-width:0}
+    .pah .pz-equiv dd{font-size:1.35rem}
+    .pah .calc{grid-template-columns:1fr;padding:1rem}
+    .pah h2{font-size:1.6rem;margin-top:2.4rem}
+    .pah th,.pah td{padding:.5rem .3rem;font-size:.9rem}
+    .pah .escala button{grid-template-columns:3.6rem 1fr 6.6rem;gap:.5rem}
+  }
+</style>
+
+<div class="pah" id="pah-cafe-co">
+  <section class="pizarra" aria-live="polite" aria-label="Precio del café hoy">
+    <p class="pz-fecha" id="pah-fecha">Precio de hoy</p>
+    <p class="pz-cifra" id="pah-precio">Cargando…</p>
+    <svg class="pz-trazo" viewBox="0 0 430 14" aria-hidden="true" preserveAspectRatio="none"><path d="M3 9 C 90 4, 170 12, 250 7 S 380 5, 427 8"/></svg>
+    <p class="pz-unidad">por carga de 125 kg de café pergamino seco, factor <span id="pah-ref">94</span></p>
+    <p id="pah-variacion"></p>
+    <dl class="pz-equiv">
+      <div><dt>Kilo</dt><dd id="pah-kilo">…</dd></div>
+      <div><dt>Arroba de 12,5 kg</dt><dd id="pah-arroba">…</dd></div>
+      <div><dt>Bolsa de Nueva York</dt><dd id="pah-bolsa">…</dd></div>
+    </dl>
+    <p class="pz-fuente" id="pah-fuente"></p>
+  </section>
+
+  <h2>¿Cuánto me pagan por mi café?</h2>
+  <p class="intro">Escriba cuánto café tiene, el factor que le dio la muestra y dónde lo va a vender.</p>
+  <div class="calc">
+    <div>
+      <div class="campo">
+        <label for="pah-cantidad">Café pergamino seco</label>
+        <div class="par">
+          <input id="pah-cantidad" type="number" min="0" step="any" inputmode="decimal" value="125">
+          <select id="pah-unidad" aria-label="Unidad">
+            <option value="1">kilos</option>
+            <option value="12.5">arrobas</option>
+            <option value="125">cargas</option>
+          </select>
+        </div>
+      </div>
+      <div class="campo">
+        <label for="pah-factor">Factor de rendimiento</label>
+        <select id="pah-factor"></select>
+      </div>
+      <div class="campo">
+        <label for="pah-ciudad">Dónde lo vende</label>
+        <select id="pah-ciudad"><option value="">Promedio nacional</option></select>
+      </div>
+    </div>
+    <div class="tiquete" aria-live="polite">
+      <p class="tq-titulo">Liquidación de referencia</p>
+      <p class="tq-sub" id="pah-tq-fecha">Precio Federación</p>
+      <div id="pah-detalle"></div>
+      <div class="tq-sep"></div>
+      <div class="tq-total"><span>Total</span><span id="pah-total">…</span></div>
+    </div>
+    <p class="nota">El comprador puede pagar distinto por calidad de taza, humedad, bonificaciones o costos de acopio. Use este valor para saber si la oferta que le hacen está cerca del precio del día.</p>
+  </div>
+
+  <h2>Precio del café hoy por ciudad</h2>
+  <p class="intro">Precio por carga con factor 94 en los puntos de compra de Almacafé, de mayor a menor. Debajo de cada precio va la diferencia frente al promedio nacional.</p>
+  <div class="desliza"><table>
+    <thead><tr><th>Ciudad</th><th>Carga</th><th>Arroba</th><th>Kilo</th></tr></thead>
+    <tbody id="pah-ciudades"></tbody>
+  </table></div>
+
+  <h2>Precio según el factor de rendimiento</h2>
+  <p class="intro">Entre más bajo el factor, más excelso sale de la carga y mejor se paga. Toque un factor para usarlo en la calculadora; el elegido aparece en rojo.</p>
+  <ol class="escala" id="pah-factores"></ol>
+
+  <h2>Histórico del precio de la carga</h2>
+  <div id="pah-grafica"><p class="nota">La gráfica aparece cuando haya al menos tres días de datos.</p></div>
+  <table>
+    <thead><tr><th>Fecha</th><th>Carga</th><th>Cambio</th></tr></thead>
+    <tbody id="pah-historico"></tbody>
+  </table>
+
+  <h2>Preguntas frecuentes</h2>
+  <details><summary>¿Qué es el precio interno de referencia?</summary>
+    <p>Es el precio base que publica cada día la Federación Nacional de Cafeteros para la compra de café pergamino seco en Colombia. Se calcula con el cierre del contrato C en la Bolsa de Nueva York, la tasa de cambio del día y la prima de referencia del café colombiano.</p></details>
+  <details><summary>¿Qué es el factor de rendimiento?</summary>
+    <p>Indica cuántos kilos de café pergamino seco se necesitan para obtener 70 kilos de café excelso al trillar. Un factor de 94 es el de referencia. Con un factor más bajo el café rinde más y se paga mejor; con uno más alto se paga menos.</p></details>
+  <details><summary>¿Cuánto pesa una carga y una arroba de café?</summary>
+    <p>Una carga de café pergamino seco son 125 kilos. Una arroba son 12,5 kilos, así que una carga equivale a 10 arrobas.</p></details>
+  <details><summary>¿Por qué el precio cambia todos los días?</summary>
+    <p>Porque depende de la cotización del café en la Bolsa de Nueva York y del valor del dólar en Colombia, que se mueven a diario.</p></details>
+  <details><summary>¿Este es el precio exacto que me van a pagar?</summary>
+    <p>No necesariamente. Es una referencia. Cooperativas y compradores pueden descontar o bonificar según la calidad de taza, la humedad, la merma y el transporte.</p></details>
+</div>
+
+<script>
+(function () {
+  var cfg = window.PAH_CONFIG || {};
+  var $ = function (id) { return document.getElementById(id); };
+  var cop = new Intl.NumberFormat("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 });
+  var num = new Intl.NumberFormat("es-CO", { maximumFractionDigits: 2 });
+  var MESES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+  var DIAS = ["domingo","lunes","martes","miércoles","jueves","viernes","sábado"];
+  function partes(iso) { var p = iso.split("-"); return { a: +p[0], m: +p[1], d: +p[2] }; }
+  function fechaLarga(iso) { var p = partes(iso); return p.d + " de " + MESES[p.m - 1] + " de " + p.a; }
+  function fechaConDia(iso) { var p = partes(iso); var dia = DIAS[new Date(p.a, p.m - 1, p.d).getDay()];
+    return dia + " " + p.d + " de " + MESES[p.m - 1]; }
+  function fechaCorta(iso) { var p = partes(iso); return p.d + "/" + p.m; }
+  function conSigno(v) { return (v > 0 ? "+" : v < 0 ? "−" : "") + cop.format(Math.abs(v)); }
+  function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function obtener(url, respaldo) {
+    return fetch(url, { cache: "no-cache" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .catch(function (e) { if (respaldo) return respaldo; throw e; });
+  }
+
+  var D, H = [];
+
+  function linea(a, b) { return '<div class="tq-fila"><span>' + a + "</span><span>" + b + "</span></div>"; }
+
+  function marcarFactor(factor) {
+    var items = $("pah-factores").querySelectorAll("button");
+    for (var i = 0; i < items.length; i++) {
+      var el = +items[i].getAttribute("data-factor") === factor;
+      items[i].classList.toggle("elegido", el);
+      items[i].setAttribute("aria-pressed", el ? "true" : "false");
+    }
+  }
+
+  function calcular() {
+    if (!D) return;
+    var kilos = (parseFloat($("pah-cantidad").value) || 0) * parseFloat($("pah-unidad").value);
+    var factor = +$("pah-factor").value;
+    var fila_f = D.factores.filter(function (f) { return f.factor === factor; })[0];
+    if (!fila_f) return;
+    var ajuste = 1, ciudad = $("pah-ciudad").value;
+    if (ciudad) {
+      var c = D.ciudades.filter(function (x) { return x.ciudad === ciudad; })[0];
+      if (c) ajuste = c.carga / D.precio_carga;
+    }
+    var cargas = kilos / 125;
+    var total = fila_f.total * cargas * ajuste;
+    $("pah-total").textContent = cop.format(total);
+    $("pah-detalle").innerHTML =
+      linea("Pergamino seco", num.format(kilos) + " kg") +
+      linea("Equivale a", num.format(cargas) + " cargas, " + num.format(kilos / 12.5) + " @") +
+      linea("Factor", factor) +
+      linea("Precio de", esc(ciudad || "Promedio nacional")) +
+      '<div class="tq-sep"></div>' +
+      linea("Excelso", cop.format(fila_f.valor_excelso * cargas * ajuste)) +
+      linea("Pasilla", cop.format(fila_f.valor_pasilla * cargas * ajuste));
+    marcarFactor(factor);
+  }
+
+  function grafica(datos) {
+    if (datos.length < 3) return;
+    var W = 700, Hh = 220, m = { l: 70, r: 12, t: 12, b: 28 };
+    var ys = datos.map(function (d) { return d.carga; });
+    var min = Math.min.apply(null, ys), max = Math.max.apply(null, ys);
+    var pad = (max - min) * 0.1 || max * 0.02; min -= pad; max += pad;
+    var x = function (i) { return m.l + i * (W - m.l - m.r) / (datos.length - 1); };
+    var y = function (v) { return m.t + (max - v) * (Hh - m.t - m.b) / (max - min); };
+    var puntos = datos.map(function (d, i) { return x(i).toFixed(1) + "," + y(d.carga).toFixed(1); }).join(" ");
+    var marcas = [min + pad, (min + max) / 2, max - pad].map(function (v) {
+      return '<line x1="' + m.l + '" x2="' + (W - m.r) + '" y1="' + y(v) + '" y2="' + y(v) + '" stroke="#D6DCD7"/>' +
+        '<text x="' + (m.l - 8) + '" y="' + (y(v) + 4) + '" font-size="12" text-anchor="end" fill="#5E6A63">' + (v / 1e6).toFixed(2) + ' M</text>';
+    }).join("");
+    var ult = datos.length - 1;
+    var etiquetas = [0, Math.floor(ult / 2), ult].map(function (i) {
+      return '<text x="' + x(i) + '" y="' + (Hh - 8) + '" font-size="12" text-anchor="' + (i === 0 ? "start" : i === ult ? "end" : "middle") + '" fill="#5E6A63">' + fechaCorta(datos[i].fecha) + "</text>";
+    }).join("");
+    $("pah-grafica").innerHTML = '<svg viewBox="0 0 ' + W + " " + Hh + '" role="img" aria-label="Histórico del precio de la carga de café">' +
+      marcas + etiquetas + '<polyline fill="none" stroke="#1F2D27" stroke-width="2.5" stroke-linejoin="round" points="' + puntos + '"/>' +
+      '<circle cx="' + x(ult) + '" cy="' + y(datos[ult].carga) + '" r="5" fill="#B0272F"/></svg>';
+  }
+
+  function pintar() {
+    var precio = $("pah-precio");
+    precio.textContent = cop.format(D.precio_carga);
+    precio.classList.add("escribiendo");
+    $("pah-fecha").textContent = "Precio de hoy, " + fechaConDia(D.fecha);
+    if (typeof D.variacion_carga === "number" && D.variacion_carga !== 0) {
+      var sube = D.variacion_carga > 0;
+      $("pah-variacion").innerHTML = '<span class="' + (sube ? "sube" : "baja") + '">' + (sube ? "▲ Subió " : "▼ Bajó ") +
+        cop.format(Math.abs(D.variacion_carga)) + " (" + num.format(Math.abs(D.variacion_pct)) + " %) frente al día anterior</span>";
+    } else {
+      $("pah-variacion").textContent = "";
+    }
+    $("pah-ref").textContent = D.factor_referencia;
+    $("pah-kilo").textContent = cop.format(D.precio_carga / 125);
+    $("pah-arroba").textContent = cop.format(D.precio_carga / 10);
+    $("pah-bolsa").textContent = D.bolsa_ny_usc_lb ? num.format(D.bolsa_ny_usc_lb) + " ¢/lb" : "—";
+    $("pah-fuente").textContent = "Fuente: " + D.fuente + ", publicación del " + fechaLarga(D.fecha) + ". Esta página se actualiza sola cada día hábil.";
+    $("pah-tq-fecha").textContent = "Precio Federación del " + fechaLarga(D.fecha);
+
+    var ciudades = D.ciudades.slice().sort(function (a, b) { return b.carga - a.carga; });
+    $("pah-ciudades").innerHTML = ciudades.map(function (c) {
+      var dif = c.carga - D.precio_carga;
+      var cls = dif > 0 ? "sube" : dif < 0 ? "baja" : "";
+      return "<tr><td>" + esc(c.ciudad) + "</td><td>" + cop.format(c.carga) +
+        '<small class="' + cls + '">' + (dif === 0 ? "igual" : conSigno(dif)) + "</small></td><td>" +
+        cop.format(c.arroba) + "</td><td>" + cop.format(c.kilo) + "</td></tr>";
+    }).join("");
+
+    var totales = D.factores.map(function (f) { return f.total; });
+    var tMax = Math.max.apply(null, totales), tMin = Math.min.apply(null, totales);
+    var base = tMin - (tMax - tMin) * 0.35;
+    $("pah-factores").innerHTML = D.factores.map(function (f) {
+      var ref = f.factor === D.factor_referencia;
+      var ancho = tMax === base ? 100 : Math.max(4, (f.total - base) / (tMax - base) * 100);
+      return '<li><button type="button" data-factor="' + f.factor + '" class="' + (ref ? "ref" : "") + '" aria-pressed="false">' +
+        '<span class="f">' + f.factor + (ref ? "<small>referencia</small>" : "") + "</span>" +
+        '<span class="barra" aria-hidden="true"><i style="width:' + ancho.toFixed(1) + '%"></i></span>' +
+        '<span class="v">' + cop.format(f.total) + "</span></button></li>";
+    }).join("");
+
+    $("pah-factor").innerHTML = D.factores.map(function (f) {
+      return '<option value="' + f.factor + '"' + (f.factor === D.factor_referencia ? " selected" : "") + ">" + f.factor + (f.factor === D.factor_referencia ? " (referencia)" : "") + "</option>";
+    }).join("");
+    $("pah-ciudad").innerHTML = '<option value="">Promedio nacional</option>' + D.ciudades.map(function (c) {
+      return '<option value="' + esc(c.ciudad) + '">' + esc(c.ciudad) + "</option>";
+    }).join("");
+
+    var recientes = H.slice(-10).reverse();
+    $("pah-historico").innerHTML = recientes.map(function (h, i) {
+      var previo = recientes[i + 1];
+      var cambio = previo ? h.carga - previo.carga : null;
+      var txt = cambio === null ? "—" : '<span class="' + (cambio > 0 ? "sube" : cambio < 0 ? "baja" : "") + '">' + conSigno(cambio) + "</span>";
+      return "<tr><td>" + fechaLarga(h.fecha) + "</td><td>" + cop.format(h.carga) + "</td><td>" + txt + "</td></tr>";
+    }).join("");
+    grafica(H.slice(-60));
+    calcular();
+  }
+
+  ["pah-cantidad", "pah-unidad", "pah-factor", "pah-ciudad"].forEach(function (id) {
+    $(id).addEventListener("input", calcular);
+    $(id).addEventListener("change", calcular);
+  });
+  $("pah-factores").addEventListener("click", function (e) {
+    var b = e.target.closest ? e.target.closest("button[data-factor]") : null;
+    if (!b) return;
+    $("pah-factor").value = b.getAttribute("data-factor");
+    calcular();
+    $("pah-total").scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+
+  Promise.all([
+    obtener(cfg.datos, window.PAH_MUESTRA),
+    obtener(cfg.historico, window.PAH_MUESTRA_HIST || []).catch(function () { return []; })
+  ]).then(function (r) { D = r[0]; H = r[1] || []; pintar(); })
+    .catch(function () {
+      $("pah-precio").textContent = "Sin dato";
+      $("pah-variacion").innerHTML = '<span class="aviso">No se pudo cargar el precio. Recargue la página en unos minutos.</span>';
+    });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "¿Qué es el precio interno de referencia del café?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Es el precio base que publica cada día la Federación Nacional de Cafeteros para la compra de café pergamino seco en Colombia, calculado con el cierre de la Bolsa de Nueva York, la tasa de cambio y la prima de referencia del café colombiano."}},
+    {"@type": "Question", "name": "¿Qué es el factor de rendimiento del café?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Indica cuántos kilos de café pergamino seco se necesitan para obtener 70 kilos de café excelso. El factor de referencia es 94; con un factor más bajo el café se paga mejor."}},
+    {"@type": "Question", "name": "¿Cuánto pesa una carga de café?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Una carga de café pergamino seco son 125 kilos, equivalentes a 10 arrobas de 12,5 kilos."}}
+  ]
+}
+</script>
+<!-- ===== Fin Precio Agro Hoy: café Colombia ===== -->
