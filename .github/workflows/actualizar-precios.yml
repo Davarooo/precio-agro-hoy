@@ -11,8 +11,12 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: actualizar-precios
+  cancel-in-progress: false
+
 jobs:
-  cafe-colombia:
+  precios:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,11 +25,18 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Pruebas del lector de PDF
+      - name: Pruebas de los lectores de precios
         run: python -m unittest discover -s tests -v
 
-      - name: Descargar y procesar precio del cafe
+      - name: Cafe Colombia (PDF de la Federacion)
+        id: cafe_colombia
+        continue-on-error: true
         run: python scripts/cafe_colombia.py
+
+      - name: Cacao y cafe Peru (Bolsa de Nueva York)
+        id: bolsa
+        continue-on-error: true
+        run: python scripts/bolsa.py
 
       - name: Guardar cambios
         run: |
@@ -35,6 +46,13 @@ jobs:
           if git diff --cached --quiet; then
             echo "Sin cambios en los datos"
           else
-            git commit -m "Precio del café $(date -u +%Y-%m-%d)"
+            git commit -m "Precios $(date -u +%Y-%m-%d)"
+            git pull --rebase
             git push
           fi
+
+      - name: Avisar si alguna fuente fallo
+        if: steps.cafe_colombia.outcome == 'failure' || steps.bolsa.outcome == 'failure'
+        run: |
+          echo "Cafe Colombia: ${{ steps.cafe_colombia.outcome }} | Bolsa: ${{ steps.bolsa.outcome }}"
+          exit 1
