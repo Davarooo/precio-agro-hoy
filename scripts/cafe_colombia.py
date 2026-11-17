@@ -8,6 +8,7 @@ codigo 1 para que GitHub Actions marque el fallo y envie el correo de alerta.
 import json
 import re
 import sys
+import time
 import urllib.request
 import zlib
 from datetime import datetime, timezone
@@ -28,10 +29,18 @@ MESES = {
 UA = "Mozilla/5.0 (compatible; PrecioAgroHoy/1.0; +https://github.com)"
 
 
-def descargar(url: str) -> bytes:
-    req = urllib.request.Request(url, headers={"User-Agent": UA})
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        return resp.read()
+def descargar(url: str, intentos: int = 3) -> bytes:
+    """El servidor de la Federacion a veces corta la conexion: se reintenta."""
+    for n in range(intentos):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": UA})
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                return resp.read()
+        except Exception as exc:
+            if n == intentos - 1:
+                raise
+            print(f"Aviso: intento {n + 1} fallo ({exc}); reintento")
+            time.sleep(20 * (n + 1))
 
 
 def url_del_pdf() -> str:
