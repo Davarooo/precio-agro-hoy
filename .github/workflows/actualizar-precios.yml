@@ -2,13 +2,10 @@ name: Actualizar precios
 
 on:
   schedule:
-    # GitHub retrasa o salta los horarios en punto: se usan minutos raros y varios intentos.
-    # Hora Colombia = UTC - 5.
-    - cron: "17 12 * * 1-6"   # 7:17 a. m. lunes a sabado
-    - cron: "47 15 * * 1-5"   # 10:47 a. m.
-    - cron: "17 19 * * 1-5"   # 2:17 p. m. (despues del cierre de Nueva York)
-    - cron: "47 22 * * 1-5"   # 5:47 p. m.
-    - cron: "17 2 * * 2-6"    # 9:17 p. m. de lunes a viernes (respaldo)
+    # Hora Colombia = UTC - 5. GitHub retrasa o salta horarios, por eso hay muchos intentos.
+    - cron: "17 12 * * 1-6"           # 7:17 a. m.: dolar de la manana
+    - cron: "7,27,47 17-23 * * 1-5"   # cada 20 min de 12:07 p. m. a 6:47 p. m.: cierre de bolsa y Federacion
+    - cron: "17 2 * * 2-6"            # 9:17 p. m.: ultimo intento del dia
   workflow_dispatch: {}
 
 permissions:
@@ -46,16 +43,22 @@ jobs:
           git config user.name "precio-agro-bot"
           git config user.email "actions@users.noreply.github.com"
           git add data/
-          if git diff --cached --quiet; then
-            echo "Sin cambios en los datos"
-          else
-            git commit -m "Precios $(date -u +%Y-%m-%d)"
+          # Solo se guarda si cambio un precio, una fecha o una tasa; la hora de revision sola no cuenta
+          if git diff --cached -U0 -- data/ | grep -E '^[+-]' | grep -vE '^(\+\+\+|---)' | grep -v '"actualizado"' > /dev/null; then
+            git commit -m "Precios $(date -u +'%Y-%m-%d %H:%M') UTC"
             git pull --rebase
             git push
+          else
+            echo "Sin precios nuevos"
+            git reset -q
+            git checkout -- data/
           fi
 
       - name: Avisar si alguna fuente fallo
         if: steps.cafe_colombia.outcome == 'failure' || steps.bolsa.outcome == 'failure'
         run: |
           echo "Cafe Colombia: ${{ steps.cafe_colombia.outcome }} | Bolsa: ${{ steps.bolsa.outcome }}"
-          exit 1
+          if [ "${{ steps.bolsa.outcome }}" = "failure" ]; then exit 1; fi
+          # La Federacion corta conexiones a veces: solo se marca error en el ultimo intento del dia
+          if [ "$(date -u +%H)" = "02" ]; then exit 1; fi
+          echo "::warning::La Federacion no respondio; se reintenta en el siguiente horario"
