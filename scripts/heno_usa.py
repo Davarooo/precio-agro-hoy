@@ -57,17 +57,17 @@ HISTORIA_MAX = 104
 DIAS_VIEJO = 45
 
 
-def descargar_json(ruta, intentos=3):
+def descargar_json(ruta, intentos=2):
     url = BASE + ruta
     for n in range(intentos):
         try:
             req = urllib.request.Request(url, headers={"User-Agent": AGENTE, "Accept": "application/json"})
-            with urllib.request.urlopen(req, timeout=40) as r:
+            with urllib.request.urlopen(req, timeout=20) as r:
                 return json.loads(r.read().decode("utf-8"))
         except Exception:
             if n == intentos - 1:
                 raise
-            time.sleep(10 * (n + 1))
+            time.sleep(5)
 
 
 def fecha_iso(texto):
@@ -177,7 +177,7 @@ def escribir(ruta, datos):
         f.write("\n")
 
 
-def procesar_estado(slug, obtener=descargar_json, raiz=RAIZ, hoy=None, pausa=0.5, historia_inicial=12):
+def procesar_estado(slug, obtener=descargar_json, raiz=RAIZ, hoy=None, pausa=0.5, historia_inicial=8):
     estado, ruta = ESTADOS[slug]
     hoy = hoy or date.today()
     fechas = fechas_publicadas(slug, obtener)
@@ -234,14 +234,20 @@ def main(obtener=descargar_json, raiz=RAIZ, pausa=0.5):
     indice = leer(os.path.join(raiz, "index.json"), {"states": []})
     previos = {s["slug"]: s for s in indice.get("states", [])}
     estados, fallas = [], []
-    for slug in ESTADOS:
+    inicio = time.time()
+    for n, slug in enumerate(ESTADOS):
         try:
             rep = procesar_estado(slug, obtener, raiz, pausa=pausa)
             estados.append({k: rep[k] for k in ("state", "path", "slug", "week_start", "published", "stale", "summary")})
+            print(f"{ESTADOS[slug][0]}: semana {rep['week_start']}, {len(rep['rows'])} precios ({time.time() - inicio:.0f} s)", flush=True)
         except Exception as e:  # un estado caído no tumba a los demás
             fallas.append(f"{ESTADOS[slug][0]}: {e}")
+            print(f"{ESTADOS[slug][0]}: FALLA {e}", flush=True)
             if slug in previos:
                 estados.append(previos[slug])
+            if n == 1 and len(fallas) == 2:  # los dos primeros fallaron: el USDA no responde, no insistir
+                print("::warning::El USDA no responde; se reintenta en la siguiente ventana", flush=True)
+                sys.exit(1)
         time.sleep(pausa)
     estados.sort(key=lambda s: s["state"])
     escribir(os.path.join(raiz, "index.json"), {
