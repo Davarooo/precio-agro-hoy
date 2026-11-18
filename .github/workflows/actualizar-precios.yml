@@ -5,10 +5,9 @@ on:
   # (ver el paso "Siguiente revision"); estos horarios solo lo arrancan cada manana
   # y lo reviven si la cadena se cae. Hora Colombia = UTC - 5.
   schedule:
-    - cron: "13 11 * * 1-6"           # 6:13 a. m.
-    - cron: "43 11 * * 1-6"           # 6:43 a. m.
-    - cron: "17 12 * * 1-6"           # 7:17 a. m.
-    - cron: "7,37 13-23 * * 1-5"      # respaldo cada 30 min de 8:07 a. m. a 6:37 p. m.
+    - cron: "13 11 * * 1-5"           # 6:13 a. m.
+    - cron: "43 11 * * 1-5"           # 6:43 a. m.
+    - cron: "23 13-23/2 * * 1-5"      # respaldo cada 2 horas de 8:23 a. m. a 6:23 p. m.
   workflow_dispatch: {}
 
 permissions:
@@ -22,6 +21,7 @@ concurrency:
 jobs:
   precios:
     runs-on: ubuntu-latest
+    timeout-minutes: 340
     steps:
       - uses: actions/checkout@v4
 
@@ -63,16 +63,23 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          DIA=$(TZ=America/Bogota date +%u)
-          HORA=$(TZ=America/Bogota date +%H)
-          # Lunes a viernes, de 6 a. m. a 9 p. m. hora Colombia: espera 18 minutos y vuelve a revisar
-          if [ "$DIA" -le 5 ] && [ "$HORA" -ge 6 ] && [ "$HORA" -lt 21 ]; then
-            sleep 1080
-            gh workflow run actualizar-precios.yml --ref main -R "$GITHUB_REPOSITORY"
-            echo "Siguiente revision lanzada"
-          else
-            echo "Fuera de horario: la cadena se detiene hasta manana"
-          fi
+          # De lunes a viernes, de 6 a. m. a 9 p. m. (hora Colombia): revisa cada 18 minutos.
+          # El resto del tiempo espera hasta las 6 a. m. del siguiente dia habil, en tramos de maximo 5 h 20 min.
+          SEG=$(python3 -c "
+          from datetime import datetime, timedelta, timezone
+          co = timezone(timedelta(hours=-5)); ahora = datetime.now(co)
+          if ahora.weekday() < 5 and 6 <= ahora.hour < 21:
+              print(1080)
+          else:
+              t = ahora.replace(hour=6, minute=0, second=0, microsecond=0)
+              if t <= ahora: t += timedelta(days=1)
+              while t.weekday() >= 5: t += timedelta(days=1)
+              print(max(60, min(19200, int((t - ahora).total_seconds()))))
+          ")
+          echo "Siguiente revision en $SEG segundos"
+          sleep "$SEG"
+          gh workflow run actualizar-precios.yml --ref main -R "$GITHUB_REPOSITORY"
+          echo "Siguiente revision lanzada"
 
       - name: Avisar si alguna fuente fallo
         if: steps.cafe_colombia.outcome == 'failure' || steps.bolsa.outcome == 'failure'
