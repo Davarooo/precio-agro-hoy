@@ -2,10 +2,13 @@ name: Actualizar precios
 
 on:
   schedule:
-    # 22:30 UTC = 5:30 p. m. hora Colombia, de lunes a viernes
-    - cron: "30 22 * * 1-5"
-    # Segundo intento a las 12:30 UTC (7:30 a. m.) por si la Federacion publico tarde
-    - cron: "30 12 * * 1-6"
+    # GitHub retrasa o salta los horarios en punto: se usan minutos raros y varios intentos.
+    # Hora Colombia = UTC - 5.
+    - cron: "17 12 * * 1-6"   # 7:17 a. m. lunes a sabado
+    - cron: "47 15 * * 1-5"   # 10:47 a. m.
+    - cron: "17 19 * * 1-5"   # 2:17 p. m. (despues del cierre de Nueva York)
+    - cron: "47 22 * * 1-5"   # 5:47 p. m.
+    - cron: "17 2 * * 2-6"    # 9:17 p. m. de lunes a viernes (respaldo)
   workflow_dispatch: {}
 
 permissions:
