@@ -42,6 +42,17 @@ jobs:
         continue-on-error: true
         run: python scripts/bolsa.py
 
+      - name: Heno USA (USDA Market News)
+        id: heno_usa
+        continue-on-error: true
+        run: |
+          # Los reportes de heno son semanales: se revisan 5 veces al dia (7, 10, 13, 16 y 19 h Colombia)
+          H=$(TZ=America/Bogota date +%-H); M=$(TZ=America/Bogota date +%-M)
+          TOCA=no
+          [ -f data/usa/hay/index.json ] || TOCA=si
+          case " 7 10 13 16 19 " in *" $H "*) [ "$M" -lt 19 ] && TOCA=si ;; esac
+          if [ "$TOCA" = si ]; then python scripts/heno_usa.py; else echo "Heno USA: no toca en esta vuelta"; fi
+
       - name: Guardar cambios
         run: |
           git config user.name "precio-agro-bot"
@@ -82,10 +93,13 @@ jobs:
           echo "Siguiente revision lanzada"
 
       - name: Avisar si alguna fuente fallo
-        if: steps.cafe_colombia.outcome == 'failure' || steps.bolsa.outcome == 'failure'
+        if: steps.cafe_colombia.outcome == 'failure' || steps.bolsa.outcome == 'failure' || steps.heno_usa.outcome == 'failure'
         run: |
-          echo "Cafe Colombia: ${{ steps.cafe_colombia.outcome }} | Bolsa: ${{ steps.bolsa.outcome }}"
+          echo "Cafe Colombia: ${{ steps.cafe_colombia.outcome }} | Bolsa: ${{ steps.bolsa.outcome }} | Heno USA: ${{ steps.heno_usa.outcome }}"
+          if [ "${{ steps.heno_usa.outcome }}" = "failure" ]; then echo "::warning::Heno USA fallo; se reintenta en la siguiente ventana"; fi
           if [ "${{ steps.bolsa.outcome }}" = "failure" ]; then exit 1; fi
-          # La Federacion corta conexiones a veces: solo se marca error en las revisiones de la noche (8 p. m. en adelante)
-          if [ "$(TZ=America/Bogota date +%H)" -ge 20 ]; then exit 1; fi
-          echo "::warning::La Federacion no respondio; se reintenta en el siguiente horario"
+          if [ "${{ steps.cafe_colombia.outcome }}" = "failure" ]; then
+            # La Federacion corta conexiones a veces: solo se marca error en las revisiones de la noche (8 p. m. en adelante)
+            if [ "$(TZ=America/Bogota date +%H)" -ge 20 ]; then exit 1; fi
+            echo "::warning::La Federacion no respondio; se reintenta en el siguiente horario"
+          fi
