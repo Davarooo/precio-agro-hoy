@@ -1,15 +1,19 @@
 name: Actualizar precios
 
 on:
+  # GitHub retrasa o salta los horarios programados. Por eso el robot se relanza solo
+  # (ver el paso "Siguiente revision"); estos horarios solo lo arrancan cada manana
+  # y lo reviven si la cadena se cae. Hora Colombia = UTC - 5.
   schedule:
-    # Hora Colombia = UTC - 5. GitHub retrasa o salta horarios, por eso hay muchos intentos.
-    - cron: "17 12 * * 1-6"           # 7:17 a. m.: dolar de la manana
-    - cron: "7,27,47 17-23 * * 1-5"   # cada 20 min de 12:07 p. m. a 6:47 p. m.: cierre de bolsa y Federacion
-    - cron: "17 2 * * 2-6"            # 9:17 p. m.: ultimo intento del dia
+    - cron: "13 11 * * 1-6"           # 6:13 a. m.
+    - cron: "43 11 * * 1-6"           # 6:43 a. m.
+    - cron: "17 12 * * 1-6"           # 7:17 a. m.
+    - cron: "7,37 13-23 * * 1-5"      # respaldo cada 30 min de 8:07 a. m. a 6:37 p. m.
   workflow_dispatch: {}
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: actualizar-precios
@@ -54,11 +58,27 @@ jobs:
             git checkout -- data/
           fi
 
+      - name: Siguiente revision (el robot se relanza solo)
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          DIA=$(TZ=America/Bogota date +%u)
+          HORA=$(TZ=America/Bogota date +%H)
+          # Lunes a viernes, de 6 a. m. a 9 p. m. hora Colombia: espera 18 minutos y vuelve a revisar
+          if [ "$DIA" -le 5 ] && [ "$HORA" -ge 6 ] && [ "$HORA" -lt 21 ]; then
+            sleep 1080
+            gh workflow run actualizar-precios.yml --ref main -R "$GITHUB_REPOSITORY"
+            echo "Siguiente revision lanzada"
+          else
+            echo "Fuera de horario: la cadena se detiene hasta manana"
+          fi
+
       - name: Avisar si alguna fuente fallo
         if: steps.cafe_colombia.outcome == 'failure' || steps.bolsa.outcome == 'failure'
         run: |
           echo "Cafe Colombia: ${{ steps.cafe_colombia.outcome }} | Bolsa: ${{ steps.bolsa.outcome }}"
           if [ "${{ steps.bolsa.outcome }}" = "failure" ]; then exit 1; fi
-          # La Federacion corta conexiones a veces: solo se marca error en el ultimo intento del dia
-          if [ "$(date -u +%H)" = "02" ]; then exit 1; fi
+          # La Federacion corta conexiones a veces: solo se marca error en las revisiones de la noche (8 p. m. en adelante)
+          if [ "$(TZ=America/Bogota date +%H)" -ge 20 ]; then exit 1; fi
           echo "::warning::La Federacion no respondio; se reintenta en el siguiente horario"
