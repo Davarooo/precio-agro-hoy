@@ -1,7 +1,7 @@
 {
  "producto": "cacao",
  "fecha": "2026-11-18",
- "actualizado": "2026-11-18T20:34:47+00:00",
+ "actualizado": "2026-11-18T20:53:07+00:00",
  "fuente": "Futuros de cacao en la Bolsa de Nueva York (ICE) y tasas de cambio, vía CNBC",
  "contrato": "Cocoa (Mar'27)",
  "usd_tonelada": 5002.0,
@@ -16,11 +16,11 @@
   },
   "peru": {
    "moneda": "PEN",
-   "tasa": 3.4147,
+   "tasa": 3.4133,
    "unidad": "kilo",
    "kg_unidad": 1.0,
-   "precio_kilo": 17.08,
-   "precio_unidad": 17.08
+   "precio_kilo": 17.07,
+   "precio_unidad": 17.07
   },
   "republica-dominicana": {
    "moneda": "DOP",
