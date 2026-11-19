@@ -271,26 +271,26 @@
    "state": "Nebraska",
    "path": "nebraska",
    "slug": 2935,
-   "week_start": "2026-11-02",
-   "published": "2026-11-05",
+   "week_start": "2026-11-16",
+   "published": "2026-11-19",
    "stale": false,
    "summary": {
     "alfalfa_ton": {
-     "median": 272.5,
-     "low": 120.0,
+     "median": 270.0,
+     "low": 150.0,
      "high": 420.0,
-     "rows": 12
+     "rows": 11
     },
     "grass_ton": {
-     "median": 167.5,
-     "low": 125.0,
+     "median": 156.0,
+     "low": 110.0,
      "high": 220.0,
-     "rows": 6
+     "rows": 4
     },
     "small_bale": {
      "median": 10.0,
      "low": 10.0,
-     "high": 10.5,
+     "high": 12.5,
      "rows": 3
     },
     "round_bale": {
@@ -562,5 +562,5 @@
    }
   }
  ],
- "actualizado": "2026-11-19T18:02:32+00:00"
+ "actualizado": "2026-11-19T21:07:35+00:00"
 }
