@@ -45,6 +45,8 @@ jobs:
       - name: Heno USA (USDA Market News)
         id: heno_usa
         continue-on-error: true
+        env:
+          USDA_API_KEY: ${{ secrets.USDA_API_KEY }}
         run: |
           # Los reportes de heno son semanales: se revisan 5 veces al dia (7, 10, 13, 16 y 19 h Colombia)
           H=$(TZ=America/Bogota date +%-H); M=$(TZ=America/Bogota date +%-M)
