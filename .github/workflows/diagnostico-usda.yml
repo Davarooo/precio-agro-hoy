@@ -11,13 +11,18 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Probar si el USDA responde desde GitHub
+      - name: Probar la API oficial del USDA con la clave
+        env:
+          USDA_API_KEY: ${{ secrets.USDA_API_KEY }}
         run: |
           UA="HayCattleBoard-bot/1.0 (+https://haycattleboard.blogspot.com)"
-          for URL in \
-            "https://marsapi.ams.usda.gov/services/v1.2/reports" \
-            "https://mymarketnews.ams.usda.gov/public_data/ajax-get-conditions-by-report/2707" \
-            "https://www.ams.usda.gov/" ; do
-            R=$(curl -sS -A "$UA" -m 25 -o /dev/null -w "%{http_code} en %{time_total}s" "$URL" 2>&1 || true)
-            echo "$URL -> $R"
-          done
+          if [ -z "$USDA_API_KEY" ]; then echo "No hay clave USDA_API_KEY"; exit 1; fi
+          echo "Clave presente (${#USDA_API_KEY} caracteres)"
+          URL="https://marsapi.ams.usda.gov/services/v1.2/reports/2707?q=report_begin_date=11/09/2026"
+          R=$(curl -sS -A "$UA" -u "$USDA_API_KEY:" -m 25 -o /tmp/r.json -w "%{http_code} en %{time_total}s" "$URL" 2>&1 || true)
+          echo "API con clave -> $R"
+          head -c 300 /tmp/r.json 2>/dev/null; echo
+          URL2="https://marsapi.ams.usda.gov/services/v1.2/reports/2707/Report%20Details?q=report_begin_date=11/09/2026"
+          R2=$(curl -sS -A "$UA" -u "$USDA_API_KEY:" -m 25 -o /tmp/d.json -w "%{http_code} en %{time_total}s" "$URL2" 2>&1 || true)
+          echo "Detalles con clave -> $R2"
+          python3 -c "import json;d=json.load(open('/tmp/d.json'));r=d.get('results',[]);print(len(r),'filas');print(sorted(r[0].keys()) if r else d)" 2>&1 | head -c 600
