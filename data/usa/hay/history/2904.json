@@ -1,0 +1,46 @@
+{
+ "state": "California",
+ "slug": 2904,
+ "weeks": [
+  {
+   "week_start": "2026-07-27",
+   "alfalfa_ton": 200.0,
+   "grass_ton": 200.0
+  },
+  {
+   "week_start": "2026-08-10",
+   "alfalfa_ton": 210.0,
+   "grass_ton": 212.5
+  },
+  {
+   "week_start": "2026-08-24",
+   "alfalfa_ton": 240.0,
+   "grass_ton": 140.0
+  },
+  {
+   "week_start": "2026-09-07",
+   "alfalfa_ton": 194.03,
+   "grass_ton": 150.0
+  },
+  {
+   "week_start": "2026-09-21",
+   "alfalfa_ton": 210.18,
+   "grass_ton": 150.0
+  },
+  {
+   "week_start": "2026-10-05",
+   "alfalfa_ton": 245.0,
+   "grass_ton": 196.5
+  },
+  {
+   "week_start": "2026-10-19",
+   "alfalfa_ton": 240.83,
+   "grass_ton": 152.5
+  },
+  {
+   "week_start": "2026-11-02",
+   "alfalfa_ton": 299.32,
+   "grass_ton": 290.0
+  }
+ ]
+}

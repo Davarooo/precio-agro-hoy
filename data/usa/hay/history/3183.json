@@ -1,0 +1,36 @@
+{
+ "state": "South Dakota",
+ "slug": 3183,
+ "weeks": [
+  {
+   "week_start": "2026-06-01",
+   "alfalfa_ton": 200.0,
+   "grass_ton": 170.0
+  },
+  {
+   "week_start": "2026-06-22",
+   "alfalfa_ton": 225.0,
+   "grass_ton": 180.0
+  },
+  {
+   "week_start": "2026-07-13",
+   "alfalfa_ton": 210.0,
+   "grass_ton": 167.5
+  },
+  {
+   "week_start": "2026-07-27",
+   "alfalfa_ton": 200.0,
+   "grass_ton": 167.5
+  },
+  {
+   "week_start": "2026-08-31",
+   "alfalfa_ton": 195.0,
+   "grass_ton": 187.5
+  },
+  {
+   "week_start": "2026-10-12",
+   "alfalfa_ton": 210.0,
+   "grass_ton": 187.5
+  }
+ ]
+}

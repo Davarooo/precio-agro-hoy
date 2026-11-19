@@ -1,0 +1,46 @@
+{
+ "state": "Kansas",
+ "slug": 2885,
+ "weeks": [
+  {
+   "week_start": "2026-07-27",
+   "alfalfa_ton": 200.0,
+   "grass_ton": 120.0
+  },
+  {
+   "week_start": "2026-08-10",
+   "alfalfa_ton": 206.67,
+   "grass_ton": 120.94
+  },
+  {
+   "week_start": "2026-08-24",
+   "alfalfa_ton": 225.0,
+   "grass_ton": 120.0
+  },
+  {
+   "week_start": "2026-09-07",
+   "alfalfa_ton": 227.5,
+   "grass_ton": 120.0
+  },
+  {
+   "week_start": "2026-09-21",
+   "alfalfa_ton": 230.0,
+   "grass_ton": 120.0
+  },
+  {
+   "week_start": "2026-10-05",
+   "alfalfa_ton": 242.5,
+   "grass_ton": 120.1
+  },
+  {
+   "week_start": "2026-10-19",
+   "alfalfa_ton": 240.0,
+   "grass_ton": 120.79
+  },
+  {
+   "week_start": "2026-11-02",
+   "alfalfa_ton": 248.02,
+   "grass_ton": 131.28
+  }
+ ]
+}

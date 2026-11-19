@@ -1,0 +1,31 @@
+{
+ "state": "Kentucky",
+ "slug": 3905,
+ "weeks": [
+  {
+   "week_start": "2026-05-04",
+   "alfalfa_ton": null,
+   "grass_ton": null
+  },
+  {
+   "week_start": "2026-06-08",
+   "alfalfa_ton": null,
+   "grass_ton": null
+  },
+  {
+   "week_start": "2026-07-06",
+   "alfalfa_ton": null,
+   "grass_ton": null
+  },
+  {
+   "week_start": "2026-08-03",
+   "alfalfa_ton": null,
+   "grass_ton": null
+  },
+  {
+   "week_start": "2026-08-31",
+   "alfalfa_ton": null,
+   "grass_ton": null
+  }
+ ]
+}

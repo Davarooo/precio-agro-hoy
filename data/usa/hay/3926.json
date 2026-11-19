@@ -1,0 +1,51 @@
+{
+ "state": "Nevada",
+ "path": "nevada",
+ "slug": 3926,
+ "report_title": "Nevada Direct Hay Report (Bi-Weekly)",
+ "week_start": "2026-11-09",
+ "week_end": "2026-11-13",
+ "published": "2026-11-13",
+ "stale": false,
+ "narrative": "Compared to the last report, hay movement has been slow, most producers out in Western Nevada are sold out of small bales and some Central Nevada producers are sold out for the season with contracts sending their hay to California dairies. There is quite a few producers holding onto their hay for prices to change or for the demand to grow. Small bales going to stables have a good demand all over the state. \n\nAccording to the U.S. Drought Monitor Website; 53.49% of the state is in a moderate drought or worse, 11.20% of the state is in severe drought or worse, 1.89% of the state is in extreme drought or worse. \n\nGrass Hay guidelines\nQuality          Crude Protein Percent\nPremium      Over 13\nGood              9-13\nFair                 5-9\nLow                Under 5\nAlfalfa Quality Guidelines\nQuality          ADF     NDF   *RFV/RFQ **TDN-100% **TDN-90%    CP\nSupreme       <27      <34      >185            >62                 >55.9           >22\nPremium       27-29   34-36  170-185      60.5-62           54.5-55.9    20-22\nGood             29-32    36-40  150-170      58-60              52.5-54.5    18-20\nFair                32-35    40-44  130-150      56-58              50.5-52.5    16-18\nUtility            >35         >44     <130           <56                  <50.5           <16\n*RFV calculated using the Wis/Minn formula. **TDN calculated using the Western formula. Quantitative factors are approximate, and many\nfactors can affect feeding value. Values based on 100% dry matter (TDN showing both 100% & 90%). Guidelines are to be used with visual\nappearance and intent of sale (usage)",
+ "source": "USDA AMS Market News",
+ "source_url": "https://mymarketnews.ams.usda.gov/viewReport/3926",
+ "summary": {
+  "alfalfa_ton": {
+   "median": 255.0,
+   "low": 255.0,
+   "high": 255.0,
+   "rows": 1
+  },
+  "grass_ton": null
+ },
+ "rows": [
+  {
+   "region": "Central",
+   "hay": "Alfalfa",
+   "quality": "Premium",
+   "package": "Large Square 3x4",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 255.0,
+   "high": 255.0,
+   "avg": 255.0,
+   "freight": "F.O.B.",
+   "use": "Dairy"
+  },
+  {
+   "region": "North",
+   "hay": "Alfalfa",
+   "quality": "Supreme",
+   "package": "Small Square 3 Tie",
+   "sale": "Trade",
+   "unit": "Per Bale",
+   "low": 20.0,
+   "high": 20.0,
+   "avg": 20.0,
+   "freight": "Delivered",
+   "use": "Stables"
+  }
+ ],
+ "actualizado": "2026-11-19T13:21:01+00:00"
+}

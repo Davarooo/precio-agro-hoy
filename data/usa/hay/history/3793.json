@@ -1,0 +1,36 @@
+{
+ "state": "Tennessee",
+ "slug": 3793,
+ "weeks": [
+  {
+   "week_start": "2026-05-25",
+   "alfalfa_ton": null,
+   "grass_ton": null
+  },
+  {
+   "week_start": "2026-06-22",
+   "alfalfa_ton": null,
+   "grass_ton": null
+  },
+  {
+   "week_start": "2026-07-27",
+   "alfalfa_ton": null,
+   "grass_ton": null
+  },
+  {
+   "week_start": "2026-08-24",
+   "alfalfa_ton": null,
+   "grass_ton": null
+  },
+  {
+   "week_start": "2026-09-21",
+   "alfalfa_ton": null,
+   "grass_ton": null
+  },
+  {
+   "week_start": "2026-10-26",
+   "alfalfa_ton": null,
+   "grass_ton": null
+  }
+ ]
+}

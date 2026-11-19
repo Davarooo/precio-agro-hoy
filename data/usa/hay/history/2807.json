@@ -1,0 +1,46 @@
+{
+ "state": "Iowa",
+ "slug": 2807,
+ "weeks": [
+  {
+   "week_start": "2026-08-10",
+   "alfalfa_ton": 280.0,
+   "grass_ton": null
+  },
+  {
+   "week_start": "2026-08-24",
+   "alfalfa_ton": 255.0,
+   "grass_ton": 116.0
+  },
+  {
+   "week_start": "2026-09-07",
+   "alfalfa_ton": 236.8,
+   "grass_ton": 225.0
+  },
+  {
+   "week_start": "2026-09-21",
+   "alfalfa_ton": 270.64,
+   "grass_ton": null
+  },
+  {
+   "week_start": "2026-10-05",
+   "alfalfa_ton": 240.0,
+   "grass_ton": null
+  },
+  {
+   "week_start": "2026-10-19",
+   "alfalfa_ton": 240.0,
+   "grass_ton": 200.0
+  },
+  {
+   "week_start": "2026-11-02",
+   "alfalfa_ton": 159.0,
+   "grass_ton": 215.0
+  },
+  {
+   "week_start": "2026-11-16",
+   "alfalfa_ton": 240.0,
+   "grass_ton": 197.5
+  }
+ ]
+}

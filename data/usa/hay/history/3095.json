@@ -1,0 +1,46 @@
+{
+ "state": "Oklahoma",
+ "slug": 3095,
+ "weeks": [
+  {
+   "week_start": "2026-07-27",
+   "alfalfa_ton": 190.0,
+   "grass_ton": 125.0
+  },
+  {
+   "week_start": "2026-08-17",
+   "alfalfa_ton": 205.0,
+   "grass_ton": 150.0
+  },
+  {
+   "week_start": "2026-08-31",
+   "alfalfa_ton": 200.0,
+   "grass_ton": 150.0
+  },
+  {
+   "week_start": "2026-09-14",
+   "alfalfa_ton": 195.0,
+   "grass_ton": 150.0
+  },
+  {
+   "week_start": "2026-09-28",
+   "alfalfa_ton": 195.0,
+   "grass_ton": 137.5
+  },
+  {
+   "week_start": "2026-10-12",
+   "alfalfa_ton": 195.0,
+   "grass_ton": 150.0
+  },
+  {
+   "week_start": "2026-10-26",
+   "alfalfa_ton": 210.0,
+   "grass_ton": 150.0
+  },
+  {
+   "week_start": "2026-11-09",
+   "alfalfa_ton": 210.0,
+   "grass_ton": 150.0
+  }
+ ]
+}

@@ -1,0 +1,411 @@
+{
+ "source": "USDA AMS Market News",
+ "states": [
+  {
+   "state": "Arizona",
+   "path": "arizona",
+   "slug": 3784,
+   "week_start": "2026-11-16",
+   "published": "2026-11-16",
+   "stale": false,
+   "summary": {
+    "alfalfa_ton": {
+     "median": 325.0,
+     "low": 325.0,
+     "high": 325.0,
+     "rows": 1
+    },
+    "grass_ton": {
+     "median": 360.0,
+     "low": 360.0,
+     "high": 360.0,
+     "rows": 1
+    }
+   }
+  },
+  {
+   "state": "California",
+   "path": "california",
+   "slug": 2904,
+   "week_start": "2026-11-02",
+   "published": "2026-11-06",
+   "stale": false,
+   "summary": {
+    "alfalfa_ton": {
+     "median": 299.32,
+     "low": 220.0,
+     "high": 360.0,
+     "rows": 8
+    },
+    "grass_ton": {
+     "median": 290.0,
+     "low": 280.0,
+     "high": 300.0,
+     "rows": 1
+    }
+   }
+  },
+  {
+   "state": "Colorado",
+   "path": "colorado",
+   "slug": 2905,
+   "week_start": "2026-11-02",
+   "published": "2026-11-05",
+   "stale": false,
+   "summary": {
+    "alfalfa_ton": {
+     "median": 295.0,
+     "low": 280.0,
+     "high": 300.0,
+     "rows": 4
+    },
+    "grass_ton": {
+     "median": 200.0,
+     "low": 185.0,
+     "high": 200.0,
+     "rows": 3
+    }
+   }
+  },
+  {
+   "state": "Idaho",
+   "path": "idaho",
+   "slug": 3056,
+   "week_start": "2026-11-09",
+   "published": "2026-11-13",
+   "stale": false,
+   "summary": {
+    "alfalfa_ton": {
+     "median": 245.0,
+     "low": 200.0,
+     "high": 275.0,
+     "rows": 8
+    },
+    "grass_ton": {
+     "median": 160.0,
+     "low": 160.0,
+     "high": 160.0,
+     "rows": 1
+    }
+   }
+  },
+  {
+   "state": "Iowa",
+   "path": "iowa",
+   "slug": 2807,
+   "week_start": "2026-11-16",
+   "published": "2026-11-17",
+   "stale": false,
+   "summary": {
+    "alfalfa_ton": {
+     "median": 240.0,
+     "low": 160.0,
+     "high": 260.0,
+     "rows": 3
+    },
+    "grass_ton": {
+     "median": 197.5,
+     "low": 88.0,
+     "high": 220.0,
+     "rows": 4
+    }
+   }
+  },
+  {
+   "state": "Kansas",
+   "path": "kansas",
+   "slug": 2885,
+   "week_start": "2026-11-02",
+   "published": "2026-11-10",
+   "stale": false,
+   "summary": {
+    "alfalfa_ton": {
+     "median": 248.02,
+     "low": 165.0,
+     "high": 355.0,
+     "rows": 47
+    },
+    "grass_ton": {
+     "median": 131.28,
+     "low": 55.0,
+     "high": 375.0,
+     "rows": 38
+    }
+   }
+  },
+  {
+   "state": "Kentucky",
+   "path": "kentucky",
+   "slug": 3905,
+   "week_start": "2026-08-31",
+   "published": "2026-09-10",
+   "stale": true,
+   "summary": {
+    "alfalfa_ton": null,
+    "grass_ton": null
+   }
+  },
+  {
+   "state": "Missouri",
+   "path": "missouri",
+   "slug": 2929,
+   "week_start": "2026-11-09",
+   "published": "2026-11-12",
+   "stale": false,
+   "summary": {
+    "alfalfa_ton": {
+     "median": 206.25,
+     "low": 125.0,
+     "high": 350.0,
+     "rows": 4
+    },
+    "grass_ton": {
+     "median": 150.0,
+     "low": 75.0,
+     "high": 225.0,
+     "rows": 3
+    }
+   }
+  },
+  {
+   "state": "Montana",
+   "path": "montana",
+   "slug": 2769,
+   "week_start": "2026-11-09",
+   "published": "2026-11-13",
+   "stale": false,
+   "summary": {
+    "alfalfa_ton": {
+     "median": 237.5,
+     "low": 235.0,
+     "high": 240.0,
+     "rows": 2
+    },
+    "grass_ton": {
+     "median": 70.0,
+     "low": 70.0,
+     "high": 70.0,
+     "rows": 1
+    }
+   }
+  },
+  {
+   "state": "Nebraska",
+   "path": "nebraska",
+   "slug": 2935,
+   "week_start": "2026-11-02",
+   "published": "2026-11-05",
+   "stale": false,
+   "summary": {
+    "alfalfa_ton": {
+     "median": 272.5,
+     "low": 120.0,
+     "high": 420.0,
+     "rows": 12
+    },
+    "grass_ton": {
+     "median": 167.5,
+     "low": 125.0,
+     "high": 220.0,
+     "rows": 6
+    }
+   }
+  },
+  {
+   "state": "Nevada",
+   "path": "nevada",
+   "slug": 3926,
+   "week_start": "2026-11-09",
+   "published": "2026-11-13",
+   "stale": false,
+   "summary": {
+    "alfalfa_ton": {
+     "median": 255.0,
+     "low": 255.0,
+     "high": 255.0,
+     "rows": 1
+    },
+    "grass_ton": null
+   }
+  },
+  {
+   "state": "New Mexico",
+   "path": "new-mexico",
+   "slug": 2939,
+   "week_start": "2026-10-19",
+   "published": "2026-10-23",
+   "stale": false,
+   "summary": {
+    "alfalfa_ton": {
+     "median": 250.0,
+     "low": 130.0,
+     "high": 350.0,
+     "rows": 21
+    },
+    "grass_ton": {
+     "median": 200.0,
+     "low": 200.0,
+     "high": 200.0,
+     "rows": 1
+    }
+   }
+  },
+  {
+   "state": "Oklahoma",
+   "path": "oklahoma",
+   "slug": 3095,
+   "week_start": "2026-11-09",
+   "published": "2026-11-13",
+   "stale": false,
+   "summary": {
+    "alfalfa_ton": {
+     "median": 210.0,
+     "low": 170.0,
+     "high": 240.0,
+     "rows": 5
+    },
+    "grass_ton": {
+     "median": 150.0,
+     "low": 60.0,
+     "high": 150.0,
+     "rows": 4
+    }
+   }
+  },
+  {
+   "state": "Oregon",
+   "path": "oregon",
+   "slug": 3057,
+   "week_start": "2026-11-02",
+   "published": "2026-11-05",
+   "stale": false,
+   "summary": {
+    "alfalfa_ton": {
+     "median": 250.0,
+     "low": 160.0,
+     "high": 350.0,
+     "rows": 23
+    },
+    "grass_ton": {
+     "median": 250.0,
+     "low": 150.0,
+     "high": 350.0,
+     "rows": 9
+    }
+   }
+  },
+  {
+   "state": "South Dakota",
+   "path": "south-dakota",
+   "slug": 3183,
+   "week_start": "2026-10-12",
+   "published": "2026-10-16",
+   "stale": false,
+   "summary": {
+    "alfalfa_ton": {
+     "median": 210.0,
+     "low": 180.0,
+     "high": 300.0,
+     "rows": 5
+    },
+    "grass_ton": {
+     "median": 187.5,
+     "low": 175.0,
+     "high": 200.0,
+     "rows": 2
+    }
+   }
+  },
+  {
+   "state": "Tennessee",
+   "path": "tennessee",
+   "slug": 3793,
+   "week_start": "2026-10-26",
+   "published": "2026-10-27",
+   "stale": false,
+   "summary": {
+    "alfalfa_ton": null,
+    "grass_ton": null
+   }
+  },
+  {
+   "state": "Texas",
+   "path": "texas",
+   "slug": 2707,
+   "week_start": "2026-11-09",
+   "published": "2026-11-13",
+   "stale": false,
+   "summary": {
+    "alfalfa_ton": {
+     "median": 362.5,
+     "low": 350.0,
+     "high": 375.0,
+     "rows": 2
+    },
+    "grass_ton": {
+     "median": 180.0,
+     "low": 180.0,
+     "high": 180.0,
+     "rows": 1
+    }
+   }
+  },
+  {
+   "state": "Utah",
+   "path": "utah",
+   "slug": 3731,
+   "week_start": "2026-11-02",
+   "published": "2026-11-05",
+   "stale": false,
+   "summary": {
+    "alfalfa_ton": {
+     "median": 270.0,
+     "low": 230.0,
+     "high": 360.0,
+     "rows": 7
+    },
+    "grass_ton": null
+   }
+  },
+  {
+   "state": "Washington",
+   "path": "washington",
+   "slug": 3058,
+   "week_start": "2026-11-09",
+   "published": "2026-11-13",
+   "stale": false,
+   "summary": {
+    "alfalfa_ton": {
+     "median": 245.0,
+     "low": 200.0,
+     "high": 350.0,
+     "rows": 11
+    },
+    "grass_ton": {
+     "median": 210.0,
+     "low": 140.0,
+     "high": 250.0,
+     "rows": 4
+    }
+   }
+  },
+  {
+   "state": "Wyoming",
+   "path": "wyoming",
+   "slug": 3236,
+   "week_start": "2026-11-09",
+   "published": "2026-11-12",
+   "stale": false,
+   "summary": {
+    "alfalfa_ton": {
+     "median": 342.5,
+     "low": 300.0,
+     "high": 460.0,
+     "rows": 7
+    },
+    "grass_ton": null
+   }
+  }
+ ],
+ "actualizado": "2026-11-19T13:21:50+00:00"
+}

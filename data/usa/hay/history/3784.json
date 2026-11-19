@@ -1,0 +1,46 @@
+{
+ "state": "Arizona",
+ "slug": 3784,
+ "weeks": [
+  {
+   "week_start": "2026-08-03",
+   "alfalfa_ton": 265.0,
+   "grass_ton": 235.0
+  },
+  {
+   "week_start": "2026-08-17",
+   "alfalfa_ton": 265.0,
+   "grass_ton": 260.0
+  },
+  {
+   "week_start": "2026-08-31",
+   "alfalfa_ton": 260.0,
+   "grass_ton": 260.0
+  },
+  {
+   "week_start": "2026-09-14",
+   "alfalfa_ton": 265.0,
+   "grass_ton": 260.0
+  },
+  {
+   "week_start": "2026-09-28",
+   "alfalfa_ton": 270.0,
+   "grass_ton": 260.0
+  },
+  {
+   "week_start": "2026-10-12",
+   "alfalfa_ton": 280.0,
+   "grass_ton": 270.0
+  },
+  {
+   "week_start": "2026-10-26",
+   "alfalfa_ton": 280.0,
+   "grass_ton": 270.0
+  },
+  {
+   "week_start": "2026-11-16",
+   "alfalfa_ton": 325.0,
+   "grass_ton": 360.0
+  }
+ ]
+}

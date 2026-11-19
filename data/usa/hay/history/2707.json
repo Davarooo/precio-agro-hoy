@@ -1,0 +1,46 @@
+{
+ "state": "Texas",
+ "slug": 2707,
+ "weeks": [
+  {
+   "week_start": "2026-08-03",
+   "alfalfa_ton": null,
+   "grass_ton": 58.75
+  },
+  {
+   "week_start": "2026-08-17",
+   "alfalfa_ton": null,
+   "grass_ton": 67.5
+  },
+  {
+   "week_start": "2026-08-31",
+   "alfalfa_ton": null,
+   "grass_ton": 67.5
+  },
+  {
+   "week_start": "2026-09-14",
+   "alfalfa_ton": 380.0,
+   "grass_ton": 153.75
+  },
+  {
+   "week_start": "2026-09-28",
+   "alfalfa_ton": 362.5,
+   "grass_ton": 240.0
+  },
+  {
+   "week_start": "2026-10-12",
+   "alfalfa_ton": 362.5,
+   "grass_ton": 240.0
+  },
+  {
+   "week_start": "2026-10-26",
+   "alfalfa_ton": 362.5,
+   "grass_ton": 240.0
+  },
+  {
+   "week_start": "2026-11-09",
+   "alfalfa_ton": 362.5,
+   "grass_ton": 180.0
+  }
+ ]
+}

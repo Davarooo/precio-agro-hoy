@@ -1,0 +1,116 @@
+{
+ "state": "Utah",
+ "path": "utah",
+ "slug": 3731,
+ "report_title": "Utah Direct Hay Report",
+ "week_start": "2026-11-02",
+ "week_end": "2026-11-06",
+ "published": "2026-11-05",
+ "stale": false,
+ "narrative": "Compared to the last report, Demand is light for all qualities of hay. Movement has been moderate throughout the whole state due to fuel prices and most everyone has the inventory they need for the time being. Some producers are holding onto their hay waiting to see what prices do while others are selling what they can now. Prices have been steady. According to the U.S. drought monitor website, 66% of the state is in a Moderate drought or worse, 36% is in a Severe drought or worse, 5% is in an Extreme drought. \n\nGrass Hay guidelines\nQuality          Crude Protein Percent\nPremium      Over 13\nGood             9-13\nFair                5-9\nLow              Under 5\nAlfalfa Quality Guidelines\nQuality          ADF     NDF  *RFV/RFQ **TDN-100% **TDN-90%     CP\nSupreme       <27     <34     >185             >62                  >55.9           >22\nPremium      27-29  34-36  170-185       60.5-62           54.5-55.9     20-22\nGood            29-32   36-40  150-170       58-60              52.5-54.5     18-20\nFair               32-35   40-44  130-150       56-58              50.5-52.5     16-18\nUtility           >35       >44      <130            <56                 <50.5             <16\n*RFV calculated using the Wis/Minn formula. **TDN calculated using the Western formula. Quantitative factors are approximate, and many\nfactors can affect feeding value. Values based on 100% dry matter (TDN showing both 100% & 90%). Guidelines are to be used with visual\nappearance and intent of sale (usage).",
+ "source": "USDA AMS Market News",
+ "source_url": "https://mymarketnews.ams.usda.gov/viewReport/3731",
+ "summary": {
+  "alfalfa_ton": {
+   "median": 270.0,
+   "low": 230.0,
+   "high": 360.0,
+   "rows": 7
+  },
+  "grass_ton": null
+ },
+ "rows": [
+  {
+   "region": "",
+   "hay": "Alfalfa",
+   "quality": "Supreme",
+   "package": "Cubes",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 360.0,
+   "high": 360.0,
+   "avg": 360.0,
+   "freight": "F.O.B.",
+   "use": "Stables"
+  },
+  {
+   "region": "",
+   "hay": "Alfalfa",
+   "quality": "Supreme",
+   "package": "Cubes",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 320.0,
+   "high": 320.0,
+   "avg": 320.0,
+   "freight": "F.O.B.",
+   "use": "Retail"
+  },
+  {
+   "region": "",
+   "hay": "Alfalfa",
+   "quality": "Supreme",
+   "package": "Cubes",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 250.0,
+   "high": 270.0,
+   "avg": 263.46,
+   "freight": "F.O.B.",
+   "use": "Export"
+  },
+  {
+   "region": "South",
+   "hay": "Alfalfa",
+   "quality": "Good",
+   "package": "Large Square 3x4",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 230.0,
+   "high": 230.0,
+   "avg": 230.0,
+   "freight": "F.O.B.",
+   "use": ""
+  },
+  {
+   "region": "South",
+   "hay": "Alfalfa",
+   "quality": "Premium",
+   "package": "Large Square 3x4",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 250.0,
+   "high": 260.0,
+   "avg": 254.0,
+   "freight": "F.O.B.",
+   "use": ""
+  },
+  {
+   "region": "South",
+   "hay": "Alfalfa",
+   "quality": "Supreme",
+   "package": "Large Square 3x4",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 270.0,
+   "high": 270.0,
+   "avg": 270.0,
+   "freight": "F.O.B.",
+   "use": ""
+  },
+  {
+   "region": "South",
+   "hay": "Alfalfa",
+   "quality": "Supreme",
+   "package": "Large Square 3x4",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 340.0,
+   "high": 340.0,
+   "avg": 340.0,
+   "freight": "F.O.B.",
+   "use": "Retail"
+  }
+ ],
+ "actualizado": "2026-11-19T13:21:34+00:00"
+}

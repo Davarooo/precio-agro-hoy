@@ -1,0 +1,142 @@
+{
+ "state": "Wyoming",
+ "path": "wyoming",
+ "slug": 3236,
+ "report_title": "Wyoming Direct Hay Report",
+ "week_start": "2026-11-09",
+ "week_end": "2026-11-13",
+ "published": "2026-11-12",
+ "stale": false,
+ "narrative": "Compared to the last report hay prices sold steady. Demand remains good so far this fall on large and small squares.  Some producers are going to carry over some tonnage into the new year for cash flow reasons.   Other producers have most of their hay sold and are waiting for trucks for delivery.  Rather warm temps across the state and has some agriculture people a little worried.  Many are hoping for snowpack so they will have enough runoff for irrigation needs next year.  Long time till spring, hopefully the snow will come.    Next report will be Wednesday, Nov 25th\n\nAlfalfa Quality Guidelines \nQuality       ADF           NDF        *RFV/RFQ       **TDN-100%      **TDN-90%        CP \nSupreme     <27          <34         >185                  >62                       >55.9              >22 \nPremium     27-29     34-36       170-185           60.5-62                54.5-55.9        20-22 \nGood            29-32     36-40       150-170           58-60                   52.5-54.5        18-20 \nFair               32-35    40-44        130-150           56-58                   50.5-52.5        16-18 \nUtility            >35         >44            <130               <56                        <50.5              <16 \n  *RFV calculated using the Wis/Minn formula. **TDN calculated using the Western formula. Quantitative factors are approximate, and many factors can affect feeding value. Values based on 100% dry matter (TDN showing both 100% & 90%). Guidelines are to be used with visual appearance and intent of sale (usage).\n\nGrass Hay guidelines\nQuality            Crude Protein Percent\nPremium             Over 13\nGood                    9-13\nFair                       5-9\nLow                     Under 5",
+ "source": "USDA AMS Market News",
+ "source_url": "https://mymarketnews.ams.usda.gov/viewReport/3236",
+ "summary": {
+  "alfalfa_ton": {
+   "median": 342.5,
+   "low": 300.0,
+   "high": 460.0,
+   "rows": 7
+  },
+  "grass_ton": null
+ },
+ "rows": [
+  {
+   "region": "Central",
+   "hay": "Alfalfa",
+   "quality": "",
+   "package": "Cubes",
+   "sale": "Ask",
+   "unit": "Per Ton",
+   "low": 460.0,
+   "high": 460.0,
+   "avg": null,
+   "freight": "F.O.B.",
+   "use": ""
+  },
+  {
+   "region": "East",
+   "hay": "Alfalfa",
+   "quality": "",
+   "package": "Pellets 17% Suncured",
+   "sale": "Ask",
+   "unit": "Per Ton",
+   "low": 400.0,
+   "high": 400.0,
+   "avg": null,
+   "freight": "F.O.B.",
+   "use": ""
+  },
+  {
+   "region": "East",
+   "hay": "Alfalfa",
+   "quality": "Good",
+   "package": "Large Square 3x4",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 300.0,
+   "high": 300.0,
+   "avg": 300.0,
+   "freight": "F.O.B.",
+   "use": "Farm/Ranch"
+  },
+  {
+   "region": "East",
+   "hay": "Alfalfa",
+   "quality": "Good/Premium",
+   "package": "Large Square 3x4",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 330.0,
+   "high": 330.0,
+   "avg": 330.0,
+   "freight": "F.O.B.",
+   "use": "Farm/Ranch"
+  },
+  {
+   "region": "West",
+   "hay": "Alfalfa",
+   "quality": "",
+   "package": "Cubes",
+   "sale": "Ask",
+   "unit": "Per Ton",
+   "low": 400.0,
+   "high": 400.0,
+   "avg": null,
+   "freight": "F.O.B.",
+   "use": ""
+  },
+  {
+   "region": "West",
+   "hay": "Alfalfa",
+   "quality": "Good/Premium",
+   "package": "Medium Square 3x3",
+   "sale": "Trade",
+   "unit": "Per Bale",
+   "low": 155.0,
+   "high": 155.0,
+   "avg": 155.0,
+   "freight": "F.O.B.",
+   "use": ""
+  },
+  {
+   "region": "West",
+   "hay": "Alfalfa",
+   "quality": "Good/Premium",
+   "package": "Large Square 3x4",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 300.0,
+   "high": 300.0,
+   "avg": 300.0,
+   "freight": "F.O.B.",
+   "use": ""
+  },
+  {
+   "region": "West",
+   "hay": "Alfalfa",
+   "quality": "Good/Premium",
+   "package": "Small Square",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 335.0,
+   "high": 350.0,
+   "avg": 342.5,
+   "freight": "F.O.B.",
+   "use": ""
+  },
+  {
+   "region": "West",
+   "hay": "Mixed Grass",
+   "quality": "Good/Premium",
+   "package": "Medium Square 3x3",
+   "sale": "Trade",
+   "unit": "Per Bale",
+   "low": 175.0,
+   "high": 175.0,
+   "avg": 175.0,
+   "freight": "F.O.B.",
+   "use": ""
+  }
+ ],
+ "actualizado": "2026-11-19T13:21:45+00:00"
+}

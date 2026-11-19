@@ -1,0 +1,46 @@
+{
+ "state": "Montana",
+ "slug": 2769,
+ "weeks": [
+  {
+   "week_start": "2026-08-03",
+   "alfalfa_ton": 300.0,
+   "grass_ton": 133.87
+  },
+  {
+   "week_start": "2026-08-17",
+   "alfalfa_ton": 204.21,
+   "grass_ton": 360.0
+  },
+  {
+   "week_start": "2026-08-31",
+   "alfalfa_ton": 275.0,
+   "grass_ton": 75.0
+  },
+  {
+   "week_start": "2026-09-14",
+   "alfalfa_ton": 232.5,
+   "grass_ton": 200.0
+  },
+  {
+   "week_start": "2026-09-28",
+   "alfalfa_ton": 200.0,
+   "grass_ton": 360.0
+  },
+  {
+   "week_start": "2026-10-12",
+   "alfalfa_ton": 220.0,
+   "grass_ton": 80.0
+  },
+  {
+   "week_start": "2026-10-26",
+   "alfalfa_ton": 200.0,
+   "grass_ton": 210.0
+  },
+  {
+   "week_start": "2026-11-09",
+   "alfalfa_ton": 237.5,
+   "grass_ton": 70.0
+  }
+ ]
+}

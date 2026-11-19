@@ -1,0 +1,46 @@
+{
+ "state": "Nebraska",
+ "slug": 2935,
+ "weeks": [
+  {
+   "week_start": "2026-07-27",
+   "alfalfa_ton": 270.0,
+   "grass_ton": 177.14
+  },
+  {
+   "week_start": "2026-08-10",
+   "alfalfa_ton": 250.0,
+   "grass_ton": 150.0
+  },
+  {
+   "week_start": "2026-08-24",
+   "alfalfa_ton": 250.0,
+   "grass_ton": 150.0
+  },
+  {
+   "week_start": "2026-09-07",
+   "alfalfa_ton": 245.0,
+   "grass_ton": 150.0
+  },
+  {
+   "week_start": "2026-09-21",
+   "alfalfa_ton": 275.72,
+   "grass_ton": 149.58
+  },
+  {
+   "week_start": "2026-10-05",
+   "alfalfa_ton": 286.25,
+   "grass_ton": 155.0
+  },
+  {
+   "week_start": "2026-10-19",
+   "alfalfa_ton": 272.5,
+   "grass_ton": 180.0
+  },
+  {
+   "week_start": "2026-11-02",
+   "alfalfa_ton": 272.5,
+   "grass_ton": 167.5
+  }
+ ]
+}

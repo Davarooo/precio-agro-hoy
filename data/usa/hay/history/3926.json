@@ -1,0 +1,41 @@
+{
+ "state": "Nevada",
+ "slug": 3926,
+ "weeks": [
+  {
+   "week_start": "2026-08-17",
+   "alfalfa_ton": 217.5,
+   "grass_ton": 295.0
+  },
+  {
+   "week_start": "2026-08-31",
+   "alfalfa_ton": 215.0,
+   "grass_ton": 295.0
+  },
+  {
+   "week_start": "2026-09-14",
+   "alfalfa_ton": 220.0,
+   "grass_ton": 295.0
+  },
+  {
+   "week_start": "2026-09-28",
+   "alfalfa_ton": 220.0,
+   "grass_ton": 295.0
+  },
+  {
+   "week_start": "2026-10-12",
+   "alfalfa_ton": 233.44,
+   "grass_ton": 295.0
+  },
+  {
+   "week_start": "2026-10-26",
+   "alfalfa_ton": 236.88,
+   "grass_ton": 190.0
+  },
+  {
+   "week_start": "2026-11-09",
+   "alfalfa_ton": 255.0,
+   "grass_ton": null
+  }
+ ]
+}
