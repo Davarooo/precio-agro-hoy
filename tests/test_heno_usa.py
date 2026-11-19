@@ -1,5 +1,6 @@
 import json
 import os
+import re
 import sys
 import tempfile
 from datetime import date
@@ -33,17 +34,18 @@ CABECERA_MO = {"results": [{
     "report_end_date": "11/13/2026", "published_date": "11/12/2026 08:24:54",
     "report_narrative": "Hay feeding is occurring.",
 }]}
-FECHAS = {"reportBeginDates": ["2026-11-09", "2026-10-26", "2026-10-12"]}
+# Cabeceras de las últimas semanas publicadas (consulta por rango de fechas).
+FECHAS = {"results": [{"report_begin_date": "10/12/2026"}, {"report_begin_date": "11/09/2026"},
+                      {"report_begin_date": "10/26/2026"}, {"report_begin_date": "11/09/2026"}]}
 
 
 def obtener_falso(ruta):
-    if "ajax-get-conditions-by-report" in ruta:
-        return FECHAS
+    assert ruta.startswith("/reports/"), ruta
     if "Report%20Details" in ruta:
         return DETALLE_MO
-    if "ajax-search-data-by-report/" in ruta:
-        return CABECERA_MO
-    raise AssertionError("ruta inesperada " + ruta)
+    if re.search(r"\d{4}:\d\d/", ruta):  # rango de fechas
+        return FECHAS
+    return CABECERA_MO
 
 
 def test_descarta_filas_danadas():
@@ -104,6 +106,23 @@ def test_un_estado_caido_no_tumba_el_indice():
             idx = json.load(f)
         nombres = [s["state"] for s in idx["states"]]
         assert "Texas" not in nombres and len(nombres) == len(heno_usa.ESTADOS) - 1
+
+
+def test_fechas_publicadas_sin_repetir_y_ordenadas():
+    assert heno_usa.fechas_publicadas(2929, obtener_falso, date(2026, 11, 18)) == ["2026-11-09", "2026-10-26", "2026-10-12"]
+
+
+def test_sin_clave_avisa_claro():
+    viejo = os.environ.pop("USDA_API_KEY", None)
+    try:
+        heno_usa.descargar_json("/reports/2707")
+    except RuntimeError as e:
+        assert "USDA_API_KEY" in str(e)
+    else:
+        raise AssertionError("debió fallar sin clave")
+    finally:
+        if viejo is not None:
+            os.environ["USDA_API_KEY"] = viejo
 
 
 def test_fechas():
