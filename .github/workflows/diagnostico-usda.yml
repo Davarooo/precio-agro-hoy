@@ -1,0 +1,23 @@
+name: Diagnostico USDA
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Probar si el USDA responde desde GitHub
+        run: |
+          UA="HayCattleBoard-bot/1.0 (+https://haycattleboard.blogspot.com)"
+          for URL in \
+            "https://marsapi.ams.usda.gov/services/v1.2/reports" \
+            "https://mymarketnews.ams.usda.gov/public_data/ajax-get-conditions-by-report/2707" \
+            "https://www.ams.usda.gov/" ; do
+            R=$(curl -sS -A "$UA" -m 25 -o /dev/null -w "%{http_code} en %{time_total}s" "$URL" 2>&1 || true)
+            echo "$URL -> $R"
+          done
