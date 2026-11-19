@@ -144,10 +144,14 @@ def resumen(filas):
             "high": max(f["high"] for f in grupo),
             "rows": len(grupo),
         }
-    tonelada = [f for f in filas if f["unit"] == "Per Ton" and not any(x in f["hay"] for x in NO_HENO)]
+    heno = [f for f in filas if not any(x in f["hay"] for x in NO_HENO)]
+    tonelada = [f for f in heno if f["unit"] == "Per Ton"]
+    paca = [f for f in heno if f["unit"] == "Per Bale"]
     return {
         "alfalfa_ton": calc([f for f in tonelada if es_alfalfa(f)]),
         "grass_ton": calc([f for f in tonelada if not es_alfalfa(f)]),
+        "small_bale": calc([f for f in paca if f["package"].startswith("Small Square")]),
+        "round_bale": calc([f for f in paca if "Round" in f["package"]]),
     }
 
 
