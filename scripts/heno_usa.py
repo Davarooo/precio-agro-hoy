@@ -1,6 +1,6 @@
 """Precios de heno por estado en Estados Unidos (USDA AMS, MyMarketNews).
 
-Lee los datos públicos de MyMarketNews (sin clave) y escribe:
+Lee la API oficial MARS del USDA (clave gratuita en la variable USDA_API_KEY) y escribe:
   data/usa/hay/<slug>.json          último reporte de cada estado
   data/usa/hay/history/<slug>.json  resumen semanal para la gráfica
   data/usa/hay/index.json           resumen de todos los estados
@@ -8,6 +8,7 @@ Lee los datos públicos de MyMarketNews (sin clave) y escribe:
 Las cifras se copian tal cual del USDA. Solo se descartan filas con
 precios fuera de rango (errores de captura).
 """
+import base64
 import json
 import os
 import statistics
@@ -15,9 +16,10 @@ import sys
 import time
 import urllib.parse
 import urllib.request
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 
 BASE = "https://mymarketnews.ams.usda.gov"
+API = "https://marsapi.ams.usda.gov/services/v1.2"
 AGENTE = "HayCattleBoard-bot/1.0 (+https://haycattleboard.blogspot.com)"
 RAIZ = os.path.join(os.path.dirname(__file__), "..", "data", "usa", "hay")
 
@@ -58,10 +60,15 @@ DIAS_VIEJO = 45
 
 
 def descargar_json(ruta, intentos=2):
-    url = BASE + ruta
+    clave = os.environ.get("USDA_API_KEY", "")
+    if not clave:
+        raise RuntimeError("falta la variable USDA_API_KEY")
+    auth = base64.b64encode(f"{clave}:".encode()).decode()
+    url = API + ruta
     for n in range(intentos):
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": AGENTE, "Accept": "application/json"})
+            req = urllib.request.Request(url, headers={"User-Agent": AGENTE, "Accept": "application/json",
+                                                       "Authorization": f"Basic {auth}"})
             with urllib.request.urlopen(req, timeout=20) as r:
                 return json.loads(r.read().decode("utf-8"))
         except Exception:
@@ -144,22 +151,28 @@ def resumen(filas):
     }
 
 
+def consulta(rango):
+    return urllib.parse.quote(f"report_begin_date={rango}", safe="=/:")
+
+
 def detalles(slug, fecha, obtener):
-    q = urllib.parse.quote(f"report_begin_date={fecha_usda(fecha)}", safe="=/:")
-    datos = obtener(f"/public_data/ajax-search-data-by-report-section/{slug}/Report%20Details?q={q}")
+    datos = obtener(f"/reports/{slug}/Report%20Details?q={consulta(fecha_usda(fecha))}")
     return [f for f in (limpiar_fila(r) for r in datos.get("results", [])) if f]
 
 
 def cabecera(slug, fecha, obtener):
-    q = urllib.parse.quote(f"report_begin_date={fecha_usda(fecha)}", safe="=/:")
-    datos = obtener(f"/public_data/ajax-search-data-by-report/{slug}?q={q}")
+    datos = obtener(f"/reports/{slug}?q={consulta(fecha_usda(fecha))}")
     res = datos.get("results") or [{}]
     return res[0]
 
 
-def fechas_publicadas(slug, obtener):
-    c = obtener(f"/public_data/ajax-get-conditions-by-report/{slug}")
-    return [d for d in c.get("reportBeginDates", []) if d]
+def fechas_publicadas(slug, obtener, hoy=None, dias=200):
+    """Semanas publicadas en los últimos `dias`, de la más nueva a la más vieja."""
+    hoy = hoy or date.today()
+    rango = f"{fecha_usda((hoy - timedelta(days=dias)).isoformat())}:{fecha_usda(hoy.isoformat())}"
+    datos = obtener(f"/reports/{slug}?q={consulta(rango)}")
+    fechas = {fecha_iso(r.get("report_begin_date")) for r in datos.get("results", [])}
+    return sorted((f for f in fechas if f), reverse=True)
 
 
 def leer(ruta, defecto):
@@ -180,7 +193,7 @@ def escribir(ruta, datos):
 def procesar_estado(slug, obtener=descargar_json, raiz=RAIZ, hoy=None, pausa=0.5, historia_inicial=8):
     estado, ruta = ESTADOS[slug]
     hoy = hoy or date.today()
-    fechas = fechas_publicadas(slug, obtener)
+    fechas = fechas_publicadas(slug, obtener, hoy)
     if not fechas:
         raise RuntimeError(f"{estado}: el USDA no devolvió fechas")
     ultima = fechas[0]
