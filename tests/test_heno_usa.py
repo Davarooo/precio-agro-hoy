@@ -70,6 +70,9 @@ def test_resumen_por_tonelada_sin_paja():
     assert r["alfalfa_ton"]["low"] == 125.0 and r["alfalfa_ton"]["high"] == 275.0
     # pasto: mixed grass (promedio 110) y wheat (80) -> mediana 95
     assert r["grass_ton"]["median"] == 95.0
+    # por paca: solo la alfalfa small square de 6 a 10 -> 8; no hay round por paca
+    assert r["small_bale"]["median"] == 8.0
+    assert r["round_bale"] is None
 
 
 def test_procesar_estado_escribe_reporte_e_historia():
