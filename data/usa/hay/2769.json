@@ -22,7 +22,9 @@
    "low": 70.0,
    "high": 70.0,
    "rows": 1
-  }
+  },
+  "small_bale": null,
+  "round_bale": null
  },
  "rows": [
   {
@@ -65,5 +67,5 @@
    "use": ""
   }
  ],
- "actualizado": "2026-11-19T13:20:51+00:00"
+ "actualizado": "2026-11-19T15:12:07+00:00"
 }

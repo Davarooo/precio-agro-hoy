@@ -17,7 +17,9 @@
    "high": 460.0,
    "rows": 7
   },
-  "grass_ton": null
+  "grass_ton": null,
+  "small_bale": null,
+  "round_bale": null
  },
  "rows": [
   {
@@ -138,5 +140,5 @@
    "use": ""
   }
  ],
- "actualizado": "2026-11-19T13:21:45+00:00"
+ "actualizado": "2026-11-19T15:12:17+00:00"
 }

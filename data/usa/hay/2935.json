@@ -22,6 +22,18 @@
    "low": 125.0,
    "high": 220.0,
    "rows": 6
+  },
+  "small_bale": {
+   "median": 10.0,
+   "low": 10.0,
+   "high": 10.5,
+   "rows": 3
+  },
+  "round_bale": {
+   "median": 130.0,
+   "low": 130.0,
+   "high": 130.0,
+   "rows": 1
   }
  },
  "rows": [
@@ -377,5 +389,5 @@
    "use": ""
   }
  ],
- "actualizado": "2026-11-19T13:20:56+00:00"
+ "actualizado": "2026-11-19T15:12:08+00:00"
 }

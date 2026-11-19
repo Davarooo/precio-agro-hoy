@@ -17,7 +17,14 @@
    "high": 255.0,
    "rows": 1
   },
-  "grass_ton": null
+  "grass_ton": null,
+  "small_bale": {
+   "median": 20.0,
+   "low": 20.0,
+   "high": 20.0,
+   "rows": 1
+  },
+  "round_bale": null
  },
  "rows": [
   {
@@ -47,5 +54,5 @@
    "use": "Stables"
   }
  ],
- "actualizado": "2026-11-19T13:21:01+00:00"
+ "actualizado": "2026-11-19T15:12:09+00:00"
 }

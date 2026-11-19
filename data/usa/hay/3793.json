@@ -12,7 +12,19 @@
  "source_url": "https://mymarketnews.ams.usda.gov/viewReport/3793",
  "summary": {
   "alfalfa_ton": null,
-  "grass_ton": null
+  "grass_ton": null,
+  "small_bale": {
+   "median": 10.0,
+   "low": 5.0,
+   "high": 325.0,
+   "rows": 26
+  },
+  "round_bale": {
+   "median": 55.0,
+   "low": 35.0,
+   "high": 100.0,
+   "rows": 19
+  }
  },
  "rows": [
   {
@@ -1043,5 +1055,5 @@
    "use": ""
   }
  ],
- "actualizado": "2026-11-19T13:21:25+00:00"
+ "actualizado": "2026-11-19T15:12:14+00:00"
 }

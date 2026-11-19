@@ -20,7 +20,14 @@
      "low": 360.0,
      "high": 360.0,
      "rows": 1
-    }
+    },
+    "small_bale": {
+     "median": 15.5,
+     "low": 10.5,
+     "high": 24.5,
+     "rows": 16
+    },
+    "round_bale": null
    }
   },
   {
@@ -42,7 +49,14 @@
      "low": 280.0,
      "high": 300.0,
      "rows": 1
-    }
+    },
+    "small_bale": {
+     "median": 14.33,
+     "low": 14.0,
+     "high": 17.0,
+     "rows": 9
+    },
+    "round_bale": null
    }
   },
   {
@@ -64,6 +78,18 @@
      "low": 185.0,
      "high": 200.0,
      "rows": 3
+    },
+    "small_bale": {
+     "median": 14.62,
+     "low": 6.0,
+     "high": 20.0,
+     "rows": 10
+    },
+    "round_bale": {
+     "median": 250.0,
+     "low": 250.0,
+     "high": 250.0,
+     "rows": 1
     }
    }
   },
@@ -86,7 +112,14 @@
      "low": 160.0,
      "high": 160.0,
      "rows": 1
-    }
+    },
+    "small_bale": {
+     "median": 12.0,
+     "low": 12.0,
+     "high": 12.0,
+     "rows": 1
+    },
+    "round_bale": null
    }
   },
   {
@@ -108,6 +141,18 @@
      "low": 88.0,
      "high": 220.0,
      "rows": 4
+    },
+    "small_bale": {
+     "median": 8.75,
+     "low": 6.5,
+     "high": 9.0,
+     "rows": 6
+    },
+    "round_bale": {
+     "median": 120.0,
+     "low": 120.0,
+     "high": 120.0,
+     "rows": 1
     }
    }
   },
@@ -130,7 +175,14 @@
      "low": 55.0,
      "high": 375.0,
      "rows": 38
-    }
+    },
+    "small_bale": {
+     "median": 10.0,
+     "low": 6.0,
+     "high": 20.0,
+     "rows": 18
+    },
+    "round_bale": null
    }
   },
   {
@@ -142,7 +194,19 @@
    "stale": true,
    "summary": {
     "alfalfa_ton": null,
-    "grass_ton": null
+    "grass_ton": null,
+    "small_bale": {
+     "median": 8.75,
+     "low": 5.5,
+     "high": 11.0,
+     "rows": 10
+    },
+    "round_bale": {
+     "median": 57.5,
+     "low": 45.0,
+     "high": 85.0,
+     "rows": 4
+    }
    }
   },
   {
@@ -164,6 +228,18 @@
      "low": 75.0,
      "high": 225.0,
      "rows": 3
+    },
+    "small_bale": {
+     "median": 6.75,
+     "low": 4.0,
+     "high": 15.0,
+     "rows": 4
+    },
+    "round_bale": {
+     "median": 42.5,
+     "low": 35.0,
+     "high": 50.0,
+     "rows": 1
     }
    }
   },
@@ -186,7 +262,9 @@
      "low": 70.0,
      "high": 70.0,
      "rows": 1
-    }
+    },
+    "small_bale": null,
+    "round_bale": null
    }
   },
   {
@@ -208,6 +286,18 @@
      "low": 125.0,
      "high": 220.0,
      "rows": 6
+    },
+    "small_bale": {
+     "median": 10.0,
+     "low": 10.0,
+     "high": 10.5,
+     "rows": 3
+    },
+    "round_bale": {
+     "median": 130.0,
+     "low": 130.0,
+     "high": 130.0,
+     "rows": 1
     }
    }
   },
@@ -225,7 +315,14 @@
      "high": 255.0,
      "rows": 1
     },
-    "grass_ton": null
+    "grass_ton": null,
+    "small_bale": {
+     "median": 20.0,
+     "low": 20.0,
+     "high": 20.0,
+     "rows": 1
+    },
+    "round_bale": null
    }
   },
   {
@@ -247,7 +344,14 @@
      "low": 200.0,
      "high": 200.0,
      "rows": 1
-    }
+    },
+    "small_bale": {
+     "median": 22.0,
+     "low": 10.0,
+     "high": 22.0,
+     "rows": 5
+    },
+    "round_bale": null
    }
   },
   {
@@ -269,6 +373,18 @@
      "low": 60.0,
      "high": 150.0,
      "rows": 4
+    },
+    "small_bale": {
+     "median": 11.0,
+     "low": 11.0,
+     "high": 11.0,
+     "rows": 1
+    },
+    "round_bale": {
+     "median": 67.5,
+     "low": 20.0,
+     "high": 110.0,
+     "rows": 14
     }
    }
   },
@@ -291,7 +407,14 @@
      "low": 150.0,
      "high": 350.0,
      "rows": 9
-    }
+    },
+    "small_bale": {
+     "median": 16.5,
+     "low": 14.0,
+     "high": 20.0,
+     "rows": 4
+    },
+    "round_bale": null
    }
   },
   {
@@ -313,7 +436,9 @@
      "low": 175.0,
      "high": 200.0,
      "rows": 2
-    }
+    },
+    "small_bale": null,
+    "round_bale": null
    }
   },
   {
@@ -325,7 +450,19 @@
    "stale": false,
    "summary": {
     "alfalfa_ton": null,
-    "grass_ton": null
+    "grass_ton": null,
+    "small_bale": {
+     "median": 10.0,
+     "low": 5.0,
+     "high": 325.0,
+     "rows": 26
+    },
+    "round_bale": {
+     "median": 55.0,
+     "low": 35.0,
+     "high": 100.0,
+     "rows": 19
+    }
    }
   },
   {
@@ -347,6 +484,18 @@
      "low": 180.0,
      "high": 180.0,
      "rows": 1
+    },
+    "small_bale": {
+     "median": 12.75,
+     "low": 9.0,
+     "high": 27.0,
+     "rows": 14
+    },
+    "round_bale": {
+     "median": 87.5,
+     "low": 50.0,
+     "high": 140.0,
+     "rows": 9
     }
    }
   },
@@ -364,7 +513,9 @@
      "high": 360.0,
      "rows": 7
     },
-    "grass_ton": null
+    "grass_ton": null,
+    "small_bale": null,
+    "round_bale": null
    }
   },
   {
@@ -386,7 +537,9 @@
      "low": 140.0,
      "high": 250.0,
      "rows": 4
-    }
+    },
+    "small_bale": null,
+    "round_bale": null
    }
   },
   {
@@ -403,9 +556,11 @@
      "high": 460.0,
      "rows": 7
     },
-    "grass_ton": null
+    "grass_ton": null,
+    "small_bale": null,
+    "round_bale": null
    }
   }
  ],
- "actualizado": "2026-11-19T13:21:50+00:00"
+ "actualizado": "2026-11-19T15:12:18+00:00"
 }
