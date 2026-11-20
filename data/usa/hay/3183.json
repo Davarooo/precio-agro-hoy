@@ -3,19 +3,19 @@
  "path": "south-dakota",
  "slug": 3183,
  "report_title": "South Dakota Direct Hay Report",
- "week_start": "2026-10-12",
- "week_end": "2026-10-16",
- "published": "2026-10-16",
+ "week_start": "2026-11-16",
+ "week_end": "2026-11-20",
+ "published": "2026-11-20",
  "stale": false,
- "narrative": "Good to very good demand for all classes of hay.  Best demand is coming from western South Dakota where the drought has been severe and little hay was made this year.  Grass hay supplies are limited as the weather wasn't conducive to growing grass as it was dry during April and May.  Drought has gripped the eastern side of the state as well, some areas are very short and made substantially less hay than normal, while in others spots the alfalfa produced pretty well.",
+ "narrative": "Very good demand for all classes and qualities of hay.  As the drought was severe and hay growth was greatly affected, especially grass hay, there is a much lighter supply of hay across the region.  Corn harvest has finished up, and corn stalk baling resumed this week as the sun and wind have allowed for better conditions to make corn stalk bales.  Usage of bedding has been high already this fall as the big rains in October and subsequent sloppy yard conditions required livestock operators to use quite a bit already.",
  "source": "USDA AMS Market News",
  "source_url": "https://mymarketnews.ams.usda.gov/viewReport/3183",
  "summary": {
   "alfalfa_ton": {
-   "median": 210.0,
+   "median": 205.0,
    "low": 180.0,
    "high": 300.0,
-   "rows": 5
+   "rows": 6
   },
   "grass_ton": {
    "median": 187.5,
@@ -37,6 +37,19 @@
    "low": 180.0,
    "high": 180.0,
    "avg": 180.0,
+   "freight": "F.O.B.",
+   "use": ""
+  },
+  {
+   "region": "",
+   "hay": "Alfalfa",
+   "quality": "Good",
+   "package": "Large Round",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 200.0,
+   "high": 200.0,
+   "avg": 200.0,
    "freight": "F.O.B.",
    "use": ""
   },
@@ -119,5 +132,5 @@
    "use": ""
   }
  ],
- "actualizado": "2026-11-20T15:00:39+00:00"
+ "actualizado": "2026-11-20T18:05:23+00:00"
 }

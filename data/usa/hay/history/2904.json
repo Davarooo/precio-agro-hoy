@@ -41,6 +41,11 @@
    "week_start": "2026-11-02",
    "alfalfa_ton": 299.32,
    "grass_ton": 290.0
+  },
+  {
+   "week_start": "2026-11-16",
+   "alfalfa_ton": 213.75,
+   "grass_ton": 280.0
   }
  ]
 }
