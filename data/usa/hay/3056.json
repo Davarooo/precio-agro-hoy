@@ -5,7 +5,7 @@
  "report_title": "Idaho Direct Hay Report",
  "week_start": "2026-11-09",
  "week_end": "2026-11-13",
- "published": "2026-11-13",
+ "published": "2026-11-20",
  "stale": false,
  "narrative": "Demand for all types of hay in Idaho is moderate. Demand for straw is picking up but there aren't a lot of trades yet with buyers still shopping around. Movement has picked up a little this week in Idaho with mostly small loads being bought. prices for alfalfa are steady. Dairy's and feedlots are buying small loads at a time waiting for prices to come down before buying big lots, with diesel fuel prices reaching $6 a gallon, most producers cant afford to deliver hay at cheaper prices. \n\nAccording to the U.S. Drought Monitor Website, most of the big hay producing areas in Idaho are under extreme to exceptional drought. 66.40% of the state is in moderate drought or worse, 32.28% of the state is in severe drought or worse, 15.27% of the state is in extreme drought or worse, 4.45% of the state is in exceptional drought. \n\nGrass Hay guidelines\nQuality Crude Protein Percent\nPremium       Over 13\nGood              9-13\nFair                  5-9\nLow                Under 5\nAlfalfa Quality Guidelines\nQuality        ADF      NDF *RFV/RFQ **TDN-100% **TDN-90%      CP\nSupreme     <27      <34     >185            >62                  >55.9            >22\nPremium     27-29  34-36  170-185      60.5-62           54.5-55.9      20-22\nGood            29-32  36-40  150-170      58-60              52.5-54.5      18-20\nFair               32-35  40-44  130-150      56-58              50.5-52.5      16-18\nUtility           >35      >44      <130           <56                 <50.5              <16\n*RFV calculated using the Wis/Minn formula. **TDN calculated using the Western formula. Quantitative factors are approximate, and many\nfactors can affect feeding value. Values based on 100% dry matter (TDN showing both 100% & 90%). Guidelines are to be used with visual\nappearance and intent of sale (usage)",
  "source": "USDA AMS Market News",
@@ -176,5 +176,5 @@
    "use": ""
   }
  ],
- "actualizado": "2026-11-20T18:05:12+00:00"
+ "actualizado": "2026-11-21T00:14:20+00:00"
 }

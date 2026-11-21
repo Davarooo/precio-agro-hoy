@@ -3,25 +3,25 @@
  "path": "oregon",
  "slug": 3057,
  "report_title": "Oregon Direct Hay Report",
- "week_start": "2026-11-02",
- "week_end": "2026-11-06",
- "published": "2026-11-05",
+ "week_start": "2026-11-16",
+ "week_end": "2026-11-20",
+ "published": "2026-11-20",
  "stale": false,
- "narrative": "Compared to the last report, Movement has increased throughout the whole state for all qualities of hay. A lot of 3rd crop got rained on in the windrow and in the bale. There are some new contracts being made for larger quantities and with that a few producers are starting to get sold out for the season. According to the U.S. Drought Monitor, 88% of the state is in a moderate drought or worse, 58% of the state is in a Severe drought or worse, 20% of the state is in an extreme drought. \n\nGrass Hay guidelines\nQuality       Crude Protein Percent\nPremium   Over 13\nGood          9-13\nFair             5-9\nLow            Under 5\n\nAlfalfa Quality Guidelines\nQuality        ADF    NDF  *RFV/RFQ **TDN-100% **TDN-90%   CP\nSupreme     <27    <34     >185             >62                 >55.9          >22\nPremium     27-29 34-36  170-185      60.5-62           54.5-55.9   20-22\nGood           29-32  36-40  150-170      58-60              52.5-54.5   18-20\nFair              32-35  40-44  130-150      56-58              50.5-52.5   16-18\nUtility          >35      >44      <130           <56                  <50.5          <16\n*RFV calculated using the Wis/Minn formula. **TDN calculated using the Western formula. Quantitative factors are approximate, and many\nfactors can affect feeding value. Values based on 100% dry matter (TDN showing both 100% & 90%). Guidelines are to be used with visual\nappearance and intent of sale (usage).",
+ "narrative": "Compared to the last report, Movement has been steady throughout the whole state for all qualities of hay. Demand for hay in Oregon has been steady as most of the state got rain or a little snow this past week. A lot of 3rd crop got rained on in the windrow and in the bale. A few producers are starting to get sold out for the season. According to the U.S. Drought Monitor, 87% of the state is in a moderate drought or worse, 58% of the state is in a Severe drought or worse, 20% of the state is in an extreme drought. \n\nGrass Hay guidelines\nQuality       Crude Protein Percent\nPremium   Over 13\nGood          9-13\nFair             5-9\nLow            Under 5\n\nAlfalfa Quality Guidelines\nQuality        ADF    NDF  *RFV/RFQ **TDN-100% **TDN-90%   CP\nSupreme     <27    <34     >185             >62                 >55.9          >22\nPremium     27-29 34-36  170-185      60.5-62           54.5-55.9   20-22\nGood           29-32  36-40  150-170      58-60              52.5-54.5   18-20\nFair              32-35  40-44  130-150      56-58              50.5-52.5   16-18\nUtility          >35      >44      <130           <56                  <50.5          <16\n*RFV calculated using the Wis/Minn formula. **TDN calculated using the Western formula. Quantitative factors are approximate, and many\nfactors can affect feeding value. Values based on 100% dry matter (TDN showing both 100% & 90%). Guidelines are to be used with visual\nappearance and intent of sale (usage).",
  "source": "USDA AMS Market News",
  "source_url": "https://mymarketnews.ams.usda.gov/viewReport/3057",
  "summary": {
   "alfalfa_ton": {
    "median": 250.0,
-   "low": 160.0,
+   "low": 200.0,
    "high": 350.0,
-   "rows": 23
+   "rows": 14
   },
   "grass_ton": {
    "median": 250.0,
    "low": 150.0,
    "high": 350.0,
-   "rows": 9
+   "rows": 7
   },
   "small_bale": {
    "median": 16.5,
@@ -32,6 +32,19 @@
   "round_bale": null
  },
  "rows": [
+  {
+   "region": "Crook/Deschutes/Jefferson/Wasco Counties",
+   "hay": "Alfalfa",
+   "quality": "Premium",
+   "package": "Small Square 3 Tie",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 290.0,
+   "high": 290.0,
+   "avg": 290.0,
+   "freight": "F.O.B.",
+   "use": "Stables"
+  },
   {
    "region": "Crook/Deschutes/Jefferson/Wasco Counties",
    "hay": "Alfalfa",
@@ -65,22 +78,9 @@
    "package": "Small Square",
    "sale": "Trade",
    "unit": "Per Ton",
-   "low": 350.0,
+   "low": 300.0,
    "high": 350.0,
-   "avg": 350.0,
-   "freight": "F.O.B.",
-   "use": "Stables"
-  },
-  {
-   "region": "Crook/Deschutes/Jefferson/Wasco Counties",
-   "hay": "Orchard Grass",
-   "quality": "Premium",
-   "package": "Small Square 3 Tie",
-   "sale": "Trade",
-   "unit": "Per Ton",
-   "low": 330.0,
-   "high": 330.0,
-   "avg": 330.0,
+   "avg": 340.26,
    "freight": "F.O.B.",
    "use": "Stables"
   },
@@ -96,6 +96,32 @@
    "avg": 330.0,
    "freight": "F.O.B.",
    "use": "Stables"
+  },
+  {
+   "region": "Crook/Deschutes/Jefferson/Wasco Counties",
+   "hay": "Triticale",
+   "quality": "Premium",
+   "package": "Small Square 3 Tie",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 250.0,
+   "high": 250.0,
+   "avg": 250.0,
+   "freight": "F.O.B.",
+   "use": "Stables"
+  },
+  {
+   "region": "Eastern Oregon",
+   "hay": "Alfalfa",
+   "quality": "Good",
+   "package": "Large Square 3x4",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 250.0,
+   "high": 250.0,
+   "avg": 250.0,
+   "freight": "F.O.B.",
+   "use": ""
   },
   {
    "region": "Eastern Oregon",
@@ -125,27 +151,14 @@
   },
   {
    "region": "Eastern Oregon",
-   "hay": "Alfalfa",
-   "quality": "Supreme",
+   "hay": "Triticale",
+   "quality": "Premium",
    "package": "Large Square 3x4",
    "sale": "Trade",
    "unit": "Per Ton",
-   "low": 275.0,
-   "high": 275.0,
-   "avg": 275.0,
-   "freight": "F.O.B.",
-   "use": "Dairy"
-  },
-  {
-   "region": "Klamath Basin",
-   "hay": "Alfalfa",
-   "quality": "Good",
-   "package": "Large Square 3x4",
-   "sale": "Trade",
-   "unit": "Per Ton",
-   "low": 190.0,
-   "high": 190.0,
-   "avg": 190.0,
+   "low": 180.0,
+   "high": 180.0,
+   "avg": 180.0,
    "freight": "F.O.B.",
    "use": ""
   },
@@ -221,35 +234,9 @@
    "package": "Large Square 3x4",
    "sale": "Trade",
    "unit": "Per Ton",
-   "low": 200.0,
-   "high": 200.0,
-   "avg": 200.0,
-   "freight": "F.O.B.",
-   "use": ""
-  },
-  {
-   "region": "Lake County",
-   "hay": "Alfalfa",
-   "quality": "Good",
-   "package": "Large Square 3x4",
-   "sale": "Trade",
-   "unit": "Per Ton",
    "low": 215.0,
    "high": 215.0,
    "avg": 215.0,
-   "freight": "F.O.B.",
-   "use": ""
-  },
-  {
-   "region": "Lake County",
-   "hay": "Alfalfa",
-   "quality": "Good",
-   "package": "Large Square 3x4",
-   "sale": "Trade",
-   "unit": "Per Ton",
-   "low": 190.0,
-   "high": 190.0,
-   "avg": 190.0,
    "freight": "F.O.B.",
    "use": ""
   },
@@ -294,32 +281,6 @@
   },
   {
    "region": "Lake County",
-   "hay": "Alfalfa",
-   "quality": "Supreme",
-   "package": "Large Square 3x4",
-   "sale": "Trade",
-   "unit": "Per Ton",
-   "low": 250.0,
-   "high": 250.0,
-   "avg": 250.0,
-   "freight": "F.O.B.",
-   "use": "Dairy"
-  },
-  {
-   "region": "Lake County",
-   "hay": "Alfalfa",
-   "quality": "Supreme",
-   "package": "Small Square 3 Tie",
-   "sale": "Trade",
-   "unit": "Per Ton",
-   "low": 300.0,
-   "high": 300.0,
-   "avg": 300.0,
-   "freight": "F.O.B.",
-   "use": "Retail"
-  },
-  {
-   "region": "Lake County",
    "hay": "Prairie/Meadow Grass",
    "quality": "Premium",
    "package": "Large Square 3x4",
@@ -330,32 +291,6 @@
    "avg": 210.0,
    "freight": "F.O.B.",
    "use": ""
-  },
-  {
-   "region": "Lake County",
-   "hay": "Triticale",
-   "quality": "Good",
-   "package": "Large Square 3x4",
-   "sale": "Trade",
-   "unit": "Per Ton",
-   "low": 155.0,
-   "high": 155.0,
-   "avg": 155.0,
-   "freight": "F.O.B.",
-   "use": ""
-  },
-  {
-   "region": "Northeast",
-   "hay": "Alfalfa",
-   "quality": "Premium",
-   "package": "Small Square",
-   "sale": "Trade",
-   "unit": "Per Ton",
-   "low": 260.0,
-   "high": 260.0,
-   "avg": 260.0,
-   "freight": "F.O.B.",
-   "use": "Stables"
   },
   {
    "region": "Northeast",
@@ -374,19 +309,6 @@
    "region": "Northeast",
    "hay": "Alfalfa/Grass Mix",
    "quality": "Good",
-   "package": "Large Square 3x4",
-   "sale": "Trade",
-   "unit": "Per Ton",
-   "low": 160.0,
-   "high": 160.0,
-   "avg": 160.0,
-   "freight": "F.O.B.",
-   "use": ""
-  },
-  {
-   "region": "Northeast",
-   "hay": "Alfalfa/Grass Mix",
-   "quality": "Good",
    "package": "Small Square",
    "sale": "Trade",
    "unit": "Per Ton",
@@ -403,45 +325,6 @@
    "package": "Small Square",
    "sale": "Trade",
    "unit": "Per Ton",
-   "low": 260.0,
-   "high": 260.0,
-   "avg": 260.0,
-   "freight": "F.O.B.",
-   "use": "Stables"
-  },
-  {
-   "region": "Northeast",
-   "hay": "Alfalfa/Grass Mix",
-   "quality": "Premium",
-   "package": "Small Square",
-   "sale": "Trade",
-   "unit": "Per Ton",
-   "low": 250.0,
-   "high": 250.0,
-   "avg": 250.0,
-   "freight": "F.O.B.",
-   "use": "Stables"
-  },
-  {
-   "region": "Northeast",
-   "hay": "Grass",
-   "quality": "Good",
-   "package": "Small Square",
-   "sale": "Trade",
-   "unit": "Per Ton",
-   "low": 200.0,
-   "high": 200.0,
-   "avg": 200.0,
-   "freight": "F.O.B.",
-   "use": "Farm/Ranch"
-  },
-  {
-   "region": "Northeast",
-   "hay": "Grass",
-   "quality": "Premium",
-   "package": "Small Square",
-   "sale": "Trade",
-   "unit": "Per Ton",
    "low": 250.0,
    "high": 250.0,
    "avg": 250.0,
@@ -460,32 +343,6 @@
    "avg": 250.0,
    "freight": "F.O.B.",
    "use": "Stables"
-  },
-  {
-   "region": "Klamath Basin",
-   "hay": "Alfalfa",
-   "quality": "Supreme",
-   "package": "Large Square 3x4",
-   "sale": "Trade",
-   "unit": "Per Ton",
-   "low": 290.0,
-   "high": 290.0,
-   "avg": 290.0,
-   "freight": "F.O.B.",
-   "use": ""
-  },
-  {
-   "region": "Lake County",
-   "hay": "Alfalfa",
-   "quality": "Supreme",
-   "package": "Large Square 3x4",
-   "sale": "Trade",
-   "unit": "Per Ton",
-   "low": 290.0,
-   "high": 290.0,
-   "avg": 290.0,
-   "freight": "F.O.B.",
-   "use": "Dairy"
   },
   {
    "region": "Lake County",
@@ -501,5 +358,5 @@
    "use": "Export"
   }
  ],
- "actualizado": "2026-11-20T18:05:23+00:00"
+ "actualizado": "2026-11-21T00:14:28+00:00"
 }

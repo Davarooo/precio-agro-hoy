@@ -3,21 +3,26 @@
  "path": "utah",
  "slug": 3731,
  "report_title": "Utah Direct Hay Report",
- "week_start": "2026-11-02",
- "week_end": "2026-11-06",
- "published": "2026-11-05",
+ "week_start": "2026-11-16",
+ "week_end": "2026-11-20",
+ "published": "2026-11-20",
  "stale": false,
- "narrative": "Compared to the last report, Demand is light for all qualities of hay. Movement has been moderate throughout the whole state due to fuel prices and most everyone has the inventory they need for the time being. Some producers are holding onto their hay waiting to see what prices do while others are selling what they can now. Prices have been steady. According to the U.S. drought monitor website, 66% of the state is in a Moderate drought or worse, 36% is in a Severe drought or worse, 5% is in an Extreme drought. \n\nGrass Hay guidelines\nQuality          Crude Protein Percent\nPremium      Over 13\nGood             9-13\nFair                5-9\nLow              Under 5\nAlfalfa Quality Guidelines\nQuality          ADF     NDF  *RFV/RFQ **TDN-100% **TDN-90%     CP\nSupreme       <27     <34     >185             >62                  >55.9           >22\nPremium      27-29  34-36  170-185       60.5-62           54.5-55.9     20-22\nGood            29-32   36-40  150-170       58-60              52.5-54.5     18-20\nFair               32-35   40-44  130-150       56-58              50.5-52.5     16-18\nUtility           >35       >44      <130            <56                 <50.5             <16\n*RFV calculated using the Wis/Minn formula. **TDN calculated using the Western formula. Quantitative factors are approximate, and many\nfactors can affect feeding value. Values based on 100% dry matter (TDN showing both 100% & 90%). Guidelines are to be used with visual\nappearance and intent of sale (usage).",
+ "narrative": "Compared to the last report, Demand is moderate for all qualities of hay. Movement has been moderate throughout the whole state. Utah got some snow or rain this weekend all over the state and producers are hoping this is just the beginning of a great snow year.  Some producers are holding onto their hay waiting to see what prices do while others are selling what they can now. Prices have been steady. According to the U.S. drought monitor website, 53% of the state is in a Moderate drought or worse, 24% is in a Severe drought or worse, 3% is in an Extreme drought. \n\nGrass Hay guidelines\nQuality          Crude Protein Percent\nPremium      Over 13\nGood             9-13\nFair                5-9\nLow              Under 5\nAlfalfa Quality Guidelines\nQuality          ADF     NDF  *RFV/RFQ **TDN-100% **TDN-90%     CP\nSupreme       <27     <34     >185             >62                  >55.9           >22\nPremium      27-29  34-36  170-185       60.5-62           54.5-55.9     20-22\nGood            29-32   36-40  150-170       58-60              52.5-54.5     18-20\nFair               32-35   40-44  130-150       56-58              50.5-52.5     16-18\nUtility           >35       >44      <130            <56                 <50.5             <16\n*RFV calculated using the Wis/Minn formula. **TDN calculated using the Western formula. Quantitative factors are approximate, and many\nfactors can affect feeding value. Values based on 100% dry matter (TDN showing both 100% & 90%). Guidelines are to be used with visual\nappearance and intent of sale (usage).",
  "source": "USDA AMS Market News",
  "source_url": "https://mymarketnews.ams.usda.gov/viewReport/3731",
  "summary": {
   "alfalfa_ton": {
-   "median": 270.0,
-   "low": 230.0,
+   "median": 266.75,
+   "low": 240.0,
    "high": 360.0,
-   "rows": 7
+   "rows": 11
   },
-  "grass_ton": null,
+  "grass_ton": {
+   "median": 242.5,
+   "low": 235.0,
+   "high": 250.0,
+   "rows": 2
+  },
   "small_bale": null,
   "round_bale": null
  },
@@ -62,33 +67,20 @@
    "use": "Export"
   },
   {
-   "region": "South",
+   "region": "Central",
    "hay": "Alfalfa",
-   "quality": "Good",
+   "quality": "Supreme",
    "package": "Large Square 3x4",
    "sale": "Trade",
    "unit": "Per Ton",
-   "low": 230.0,
-   "high": 230.0,
-   "avg": 230.0,
+   "low": 240.0,
+   "high": 240.0,
+   "avg": 240.0,
    "freight": "F.O.B.",
-   "use": ""
+   "use": "Export"
   },
   {
-   "region": "South",
-   "hay": "Alfalfa",
-   "quality": "Premium",
-   "package": "Large Square 3x4",
-   "sale": "Trade",
-   "unit": "Per Ton",
-   "low": 250.0,
-   "high": 260.0,
-   "avg": 254.0,
-   "freight": "F.O.B.",
-   "use": ""
-  },
-  {
-   "region": "South",
+   "region": "Central",
    "hay": "Alfalfa",
    "quality": "Supreme",
    "package": "Large Square 3x4",
@@ -103,7 +95,72 @@
   {
    "region": "South",
    "hay": "Alfalfa",
+   "quality": "Good",
+   "package": "Large Square 3x4",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 240.0,
+   "high": 240.0,
+   "avg": 240.0,
+   "freight": "F.O.B.",
+   "use": ""
+  },
+  {
+   "region": "South",
+   "hay": "Alfalfa",
+   "quality": "Good",
+   "package": "Large Square 3x4",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 240.0,
+   "high": 240.0,
+   "avg": 240.0,
+   "freight": "F.O.B.",
+   "use": ""
+  },
+  {
+   "region": "South",
+   "hay": "Alfalfa",
+   "quality": "Premium",
+   "package": "Large Square 3x4",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 255.0,
+   "high": 255.0,
+   "avg": 255.0,
+   "freight": "F.O.B.",
+   "use": ""
+  },
+  {
+   "region": "South",
+   "hay": "Alfalfa",
    "quality": "Supreme",
+   "package": "Large Square 3x4",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 265.0,
+   "high": 270.0,
+   "avg": 266.75,
+   "freight": "F.O.B.",
+   "use": ""
+  },
+  {
+   "region": "South",
+   "hay": "Alfalfa",
+   "quality": "Supreme",
+   "package": "Large Square 3x4",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 275.0,
+   "high": 275.0,
+   "avg": 275.0,
+   "freight": "F.O.B.",
+   "use": "Farm/Ranch"
+  },
+  {
+   "region": "South",
+   "hay": "Alfalfa/Grass Mix",
+   "quality": "Premium",
    "package": "Large Square 3x4",
    "sale": "Trade",
    "unit": "Per Ton",
@@ -112,7 +169,33 @@
    "avg": 340.0,
    "freight": "F.O.B.",
    "use": "Retail"
+  },
+  {
+   "region": "South",
+   "hay": "Forage Mix-Three Way",
+   "quality": "Premium",
+   "package": "Large Square 3x4",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 235.0,
+   "high": 235.0,
+   "avg": 235.0,
+   "freight": "F.O.B.",
+   "use": ""
+  },
+  {
+   "region": "South",
+   "hay": "Forage Mix-Three Way",
+   "quality": "Premium",
+   "package": "Large Square 3x4",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 250.0,
+   "high": 250.0,
+   "avg": 250.0,
+   "freight": "F.O.B.",
+   "use": "Farm/Ranch"
   }
  ],
- "actualizado": "2026-11-20T18:05:26+00:00"
+ "actualizado": "2026-11-21T00:14:32+00:00"
 }
