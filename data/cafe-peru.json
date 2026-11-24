@@ -1,15 +1,15 @@
 {
  "producto": "cafe",
  "pais": "peru",
- "fecha": "2026-11-24",
- "actualizado": "2026-11-24T21:50:29+00:00",
+ "fecha": "2026-11-20",
+ "actualizado": "2026-11-24T22:27:14+00:00",
  "fuente": "Futuros de café arábica (contrato C) en la Bolsa de Nueva York (ICE) y tasa de cambio, vía CNBC",
  "contrato": "Coffee (Mar'27)",
- "usc_libra": 262.6,
+ "usc_libra": 268.5,
  "tasa_pen": 3.4805,
  "kg_quintal": 46.0,
- "precio_kilo": 20.15,
- "precio_quintal": 926.89,
- "variacion_usc_libra": -5.15,
- "variacion_pct": -1.92
+ "precio_kilo": 20.6,
+ "precio_quintal": 947.72,
+ "variacion_usc_libra": -7.5,
+ "variacion_pct": -2.72
 }
