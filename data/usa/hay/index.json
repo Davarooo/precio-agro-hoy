@@ -160,27 +160,27 @@
    "state": "Kansas",
    "path": "kansas",
    "slug": 2885,
-   "week_start": "2026-11-02",
-   "published": "2026-11-10",
+   "week_start": "2026-11-16",
+   "published": "2026-11-24",
    "stale": false,
    "summary": {
     "alfalfa_ton": {
-     "median": 248.02,
-     "low": 165.0,
+     "median": 254.79,
+     "low": 170.0,
      "high": 355.0,
-     "rows": 47
+     "rows": 44
     },
     "grass_ton": {
-     "median": 131.28,
-     "low": 55.0,
+     "median": 150.0,
+     "low": 70.0,
      "high": 375.0,
-     "rows": 38
+     "rows": 32
     },
     "small_bale": {
      "median": 10.0,
      "low": 6.0,
      "high": 20.0,
-     "rows": 18
+     "rows": 15
     },
     "round_bale": null
    }
@@ -567,5 +567,5 @@
    }
   }
  ],
- "actualizado": "2026-11-24T15:02:33+00:00"
+ "actualizado": "2026-11-24T18:08:36+00:00"
 }
