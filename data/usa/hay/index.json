@@ -551,15 +551,15 @@
    "state": "Wyoming",
    "path": "wyoming",
    "slug": 3236,
-   "week_start": "2026-11-09",
-   "published": "2026-11-12",
+   "week_start": "2026-11-23",
+   "published": "2026-11-25",
    "stale": false,
    "summary": {
     "alfalfa_ton": {
-     "median": 342.5,
-     "low": 300.0,
+     "median": 310.0,
+     "low": 245.0,
      "high": 460.0,
-     "rows": 7
+     "rows": 11
     },
     "grass_ton": null,
     "small_bale": null,
@@ -567,5 +567,5 @@
    }
   }
  ],
- "actualizado": "2026-11-25T15:01:53+00:00"
+ "actualizado": "2026-11-25T21:04:20+00:00"
 }

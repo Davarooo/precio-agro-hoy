@@ -3,19 +3,19 @@
  "path": "wyoming",
  "slug": 3236,
  "report_title": "Wyoming Direct Hay Report",
- "week_start": "2026-11-09",
- "week_end": "2026-11-13",
- "published": "2026-11-12",
+ "week_start": "2026-11-23",
+ "week_end": "2026-11-27",
+ "published": "2026-11-25",
  "stale": false,
- "narrative": "Compared to the last report hay prices sold steady. Demand remains good so far this fall on large and small squares.  Some producers are going to carry over some tonnage into the new year for cash flow reasons.   Other producers have most of their hay sold and are waiting for trucks for delivery.  Rather warm temps across the state and has some agriculture people a little worried.  Many are hoping for snowpack so they will have enough runoff for irrigation needs next year.  Long time till spring, hopefully the snow will come.    Next report will be Wednesday, Nov 25th\n\nAlfalfa Quality Guidelines \nQuality       ADF           NDF        *RFV/RFQ       **TDN-100%      **TDN-90%        CP \nSupreme     <27          <34         >185                  >62                       >55.9              >22 \nPremium     27-29     34-36       170-185           60.5-62                54.5-55.9        20-22 \nGood            29-32     36-40       150-170           58-60                   52.5-54.5        18-20 \nFair               32-35    40-44        130-150           56-58                   50.5-52.5        16-18 \nUtility            >35         >44            <130               <56                        <50.5              <16 \n  *RFV calculated using the Wis/Minn formula. **TDN calculated using the Western formula. Quantitative factors are approximate, and many factors can affect feeding value. Values based on 100% dry matter (TDN showing both 100% & 90%). Guidelines are to be used with visual appearance and intent of sale (usage).\n\nGrass Hay guidelines\nQuality            Crude Protein Percent\nPremium             Over 13\nGood                    9-13\nFair                       5-9\nLow                     Under 5",
+ "narrative": "Compared to the last report hay prices sold steady.  Demand was moderate to good.  Some producers are holding some hay to sell into the New Year for cash flow scenarios.  Some snow in different areas of the state with some saying it's the most snow they have had in the last two years.  Amazing, how 3 inches of snow or a little more can give hope more is on the way to help curtail the drought in the state.  The state leans on snow pack for there water needs for the up coming irrigation and drinking needs of livestock and humans alike. Several water basins have been very low the last couple of years and a good amount of snow is needed across the whole state, high and low elevation alike.  Hope all readers have a Happy Thanksgiving.  \n \n\nAlfalfa Quality Guidelines \nQuality       ADF           NDF        *RFV/RFQ       **TDN-100%      **TDN-90%        CP \nSupreme     <27          <34         >185                  >62                       >55.9              >22 \nPremium     27-29     34-36       170-185           60.5-62                54.5-55.9        20-22 \nGood            29-32     36-40       150-170           58-60                   52.5-54.5        18-20 \nFair               32-35    40-44        130-150           56-58                   50.5-52.5        16-18 \nUtility            >35         >44            <130               <56                        <50.5              <16 \n  *RFV calculated using the Wis/Minn formula. **TDN calculated using the Western formula. Quantitative factors are approximate, and many factors can affect feeding value. Values based on 100% dry matter (TDN showing both 100% & 90%). Guidelines are to be used with visual appearance and intent of sale (usage).\n\nGrass Hay guidelines\nQuality            Crude Protein Percent\nPremium             Over 13\nGood                    9-13\nFair                       5-9\nLow                     Under 5",
  "source": "USDA AMS Market News",
  "source_url": "https://mymarketnews.ams.usda.gov/viewReport/3236",
  "summary": {
   "alfalfa_ton": {
-   "median": 342.5,
-   "low": 300.0,
+   "median": 310.0,
+   "low": 245.0,
    "high": 460.0,
-   "rows": 7
+   "rows": 11
   },
   "grass_ton": null,
   "small_bale": null,
@@ -90,6 +90,19 @@
   {
    "region": "West",
    "hay": "Alfalfa",
+   "quality": "Fair/Good",
+   "package": "Large Square 3x4",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 260.0,
+   "high": 260.0,
+   "avg": 260.0,
+   "freight": "F.O.B.",
+   "use": "Farm/Ranch"
+  },
+  {
+   "region": "West",
+   "hay": "Alfalfa",
    "quality": "Good/Premium",
    "package": "Medium Square 3x3",
    "sale": "Trade",
@@ -128,7 +141,46 @@
   },
   {
    "region": "West",
-   "hay": "Mixed Grass",
+   "hay": "Alfalfa /Rye Mix",
+   "quality": "Fair/Good",
+   "package": "Large Square 3x4",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 245.0,
+   "high": 245.0,
+   "avg": 245.0,
+   "freight": "F.O.B.",
+   "use": ""
+  },
+  {
+   "region": "West",
+   "hay": "Alfalfa/Orchard Mix",
+   "quality": "Premium",
+   "package": "Large Square 3x4",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 265.0,
+   "high": 265.0,
+   "avg": 265.0,
+   "freight": "F.O.B.",
+   "use": ""
+  },
+  {
+   "region": "West",
+   "hay": "Alfalfa/Orchard Mix",
+   "quality": "Premium",
+   "package": "Small Square",
+   "sale": "Trade",
+   "unit": "Per Ton",
+   "low": 310.0,
+   "high": 310.0,
+   "avg": 310.0,
+   "freight": "F.O.B.",
+   "use": ""
+  },
+  {
+   "region": "West",
+   "hay": "Sainfoin Mix",
    "quality": "Good/Premium",
    "package": "Medium Square 3x3",
    "sale": "Trade",
@@ -140,5 +192,5 @@
    "use": ""
   }
  ],
- "actualizado": "2026-11-25T15:01:53+00:00"
+ "actualizado": "2026-11-25T21:04:20+00:00"
 }
