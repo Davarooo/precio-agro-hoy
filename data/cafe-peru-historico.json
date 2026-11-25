@@ -34,5 +34,11 @@
   "usc_libra": 262.6,
   "PEN": 3.5007,
   "precio_quintal": 932.27
+ },
+ {
+  "fecha": "2026-11-25",
+  "usc_libra": 270.0,
+  "PEN": 3.4715,
+  "precio_quintal": 950.55
  }
 ]

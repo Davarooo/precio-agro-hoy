@@ -2,218 +2,218 @@
   "producto": "cafe",
   "pais": "colombia",
   "moneda": "COP",
-  "fecha": "2026-11-24",
-  "actualizado": "2026-11-25T15:38:53+00:00",
+  "fecha": "2026-11-25",
+  "actualizado": "2026-11-25T20:27:18+00:00",
   "fuente": "Federación Nacional de Cafeteros de Colombia",
-  "bolsa_ny_usc_lb": 262.6,
+  "bolsa_ny_usc_lb": 270.0,
   "factor_referencia": 94,
-  "precio_carga": 2165000.0,
-  "precio_kilo": 17320.0,
+  "precio_carga": 2180000.0,
+  "precio_kilo": 17440.0,
   "pasilla_cop_kg": 12000.0,
   "factores": [
     {
       "factor": 88,
       "kg_excelso": 99.43,
       "kg_pasilla": 2.13,
-      "valor_excelso": 2207940.0,
+      "valor_excelso": 2223940.0,
       "valor_pasilla": 25560.0,
-      "total": 2233500.0
+      "total": 2249500.0
     },
     {
       "factor": 89,
       "kg_excelso": 98.31,
       "kg_pasilla": 4.2,
-      "valor_excelso": 2183100.0,
+      "valor_excelso": 2198975.0,
       "valor_pasilla": 50400.0,
-      "total": 2233500.0
+      "total": 2249375.0
     },
     {
       "factor": 90,
       "kg_excelso": 97.22,
       "kg_pasilla": 4.94,
-      "valor_excelso": 2158970.0,
+      "valor_excelso": 2174595.0,
       "valor_pasilla": 59280.0,
-      "total": 2218250.0
+      "total": 2233875.0
     },
     {
       "factor": 91,
       "kg_excelso": 96.15,
       "kg_pasilla": 5.55,
-      "valor_excelso": 2135150.0,
+      "valor_excelso": 2150650.0,
       "valor_pasilla": 66600.0,
-      "total": 2201750.0
+      "total": 2217250.0
     },
     {
       "factor": 92,
       "kg_excelso": 95.11,
       "kg_pasilla": 6.45,
-      "valor_excelso": 2111975.0,
+      "valor_excelso": 2127350.0,
       "valor_pasilla": 77400.0,
-      "total": 2189375.0
+      "total": 2204750.0
     },
     {
       "factor": 93,
       "kg_excelso": 94.09,
       "kg_pasilla": 7.19,
-      "valor_excelso": 2089220.0,
+      "valor_excelso": 2104470.0,
       "valor_pasilla": 86280.0,
-      "total": 2175500.0
+      "total": 2190750.0
     },
     {
       "factor": 94,
       "kg_excelso": 93.09,
       "kg_pasilla": 8.16,
-      "valor_excelso": 2067080.0,
+      "valor_excelso": 2082080.0,
       "valor_pasilla": 97920.0,
-      "total": 2165000.0
+      "total": 2180000.0
     },
     {
       "factor": 95,
       "kg_excelso": 92.11,
       "kg_pasilla": 8.93,
-      "valor_excelso": 2045340.0,
+      "valor_excelso": 2060215.0,
       "valor_pasilla": 107160.0,
-      "total": 2152500.0
+      "total": 2167375.0
     },
     {
       "factor": 96,
       "kg_excelso": 91.15,
       "kg_pasilla": 9.6,
-      "valor_excelso": 2023925.0,
+      "valor_excelso": 2038550.0,
       "valor_pasilla": 115200.0,
-      "total": 2139125.0
+      "total": 2153750.0
     },
     {
       "factor": 97,
       "kg_excelso": 90.21,
       "kg_pasilla": 10.52,
-      "valor_excelso": 2003010.0,
+      "valor_excelso": 2017635.0,
       "valor_pasilla": 126240.0,
-      "total": 2129250.0
+      "total": 2143875.0
     },
     {
       "factor": 98,
       "kg_excelso": 89.29,
       "kg_pasilla": 11.25,
-      "valor_excelso": 1982625.0,
+      "valor_excelso": 1997000.0,
       "valor_pasilla": 135000.0,
-      "total": 2117625.0
+      "total": 2132000.0
     },
     {
       "factor": 99,
       "kg_excelso": 88.38,
       "kg_pasilla": 12.16,
-      "valor_excelso": 1962580.0,
+      "valor_excelso": 1976830.0,
       "valor_pasilla": 145920.0,
-      "total": 2108500.0
+      "total": 2122750.0
     },
     {
       "factor": 100,
       "kg_excelso": 87.5,
       "kg_pasilla": 12.81,
-      "valor_excelso": 1943030.0,
+      "valor_excelso": 1957155.0,
       "valor_pasilla": 153720.0,
-      "total": 2096750.0
+      "total": 2110875.0
     }
   ],
   "ciudades": [
     {
       "ciudad": "Armenia",
-      "carga": 2165500.0,
-      "kilo": 17324.0,
-      "arroba": 216550.0
+      "carga": 2180500.0,
+      "kilo": 17444.0,
+      "arroba": 218050.0
     },
     {
       "ciudad": "Bogotá",
-      "carga": 2164250.0,
-      "kilo": 17314.0,
-      "arroba": 216425.0
+      "carga": 2179250.0,
+      "kilo": 17434.0,
+      "arroba": 217925.0
     },
     {
       "ciudad": "Bucaramanga",
-      "carga": 2163875.0,
-      "kilo": 17311.0,
-      "arroba": 216388.0
+      "carga": 2178875.0,
+      "kilo": 17431.0,
+      "arroba": 217888.0
     },
     {
       "ciudad": "Buga",
-      "carga": 2166250.0,
-      "kilo": 17330.0,
-      "arroba": 216625.0
+      "carga": 2181250.0,
+      "kilo": 17450.0,
+      "arroba": 218125.0
     },
     {
       "ciudad": "Chinchiná",
-      "carga": 2165375.0,
-      "kilo": 17323.0,
-      "arroba": 216538.0
+      "carga": 2180375.0,
+      "kilo": 17443.0,
+      "arroba": 218038.0
     },
     {
       "ciudad": "Cúcuta",
-      "carga": 2163375.0,
-      "kilo": 17307.0,
-      "arroba": 216338.0
+      "carga": 2178375.0,
+      "kilo": 17427.0,
+      "arroba": 217838.0
     },
     {
       "ciudad": "Ibagué",
-      "carga": 2164625.0,
-      "kilo": 17317.0,
-      "arroba": 216463.0
+      "carga": 2179625.0,
+      "kilo": 17437.0,
+      "arroba": 217963.0
     },
     {
       "ciudad": "Manizales",
-      "carga": 2165375.0,
-      "kilo": 17323.0,
-      "arroba": 216538.0
+      "carga": 2180375.0,
+      "kilo": 17443.0,
+      "arroba": 218038.0
     },
     {
       "ciudad": "Medellín",
-      "carga": 2164625.0,
-      "kilo": 17317.0,
-      "arroba": 216463.0
+      "carga": 2179625.0,
+      "kilo": 17437.0,
+      "arroba": 217963.0
     },
     {
       "ciudad": "Neiva",
-      "carga": 2163750.0,
-      "kilo": 17310.0,
-      "arroba": 216375.0
+      "carga": 2178750.0,
+      "kilo": 17430.0,
+      "arroba": 217875.0
     },
     {
       "ciudad": "Pamplona",
-      "carga": 2163500.0,
-      "kilo": 17308.0,
-      "arroba": 216350.0
+      "carga": 2178500.0,
+      "kilo": 17428.0,
+      "arroba": 217850.0
     },
     {
       "ciudad": "Pasto",
-      "carga": 2163500.0,
-      "kilo": 17308.0,
-      "arroba": 216350.0
+      "carga": 2178500.0,
+      "kilo": 17428.0,
+      "arroba": 217850.0
     },
     {
       "ciudad": "Pereira",
-      "carga": 2165375.0,
-      "kilo": 17323.0,
-      "arroba": 216538.0
+      "carga": 2180375.0,
+      "kilo": 17443.0,
+      "arroba": 218038.0
     },
     {
       "ciudad": "Popayán",
-      "carga": 2165625.0,
-      "kilo": 17325.0,
-      "arroba": 216563.0
+      "carga": 2180625.0,
+      "kilo": 17445.0,
+      "arroba": 218063.0
     },
     {
       "ciudad": "Santa Marta",
-      "carga": 2167125.0,
-      "kilo": 17337.0,
-      "arroba": 216713.0
+      "carga": 2182125.0,
+      "kilo": 17457.0,
+      "arroba": 218213.0
     },
     {
       "ciudad": "Valledupar",
-      "carga": 2164750.0,
-      "kilo": 17318.0,
-      "arroba": 216475.0
+      "carga": 2179750.0,
+      "kilo": 17438.0,
+      "arroba": 217975.0
     }
   ],
-  "variacion_carga": 10000.0,
-  "variacion_pct": 0.46
+  "variacion_carga": 15000.0,
+  "variacion_pct": 0.69
 }
