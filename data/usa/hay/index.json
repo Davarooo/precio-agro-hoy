@@ -247,22 +247,17 @@
    "state": "Montana",
    "path": "montana",
    "slug": 2769,
-   "week_start": "2026-11-09",
-   "published": "2026-11-13",
+   "week_start": "2026-11-23",
+   "published": "2026-11-25",
    "stale": false,
    "summary": {
     "alfalfa_ton": {
-     "median": 237.5,
-     "low": 235.0,
-     "high": 240.0,
-     "rows": 2
-    },
-    "grass_ton": {
-     "median": 70.0,
-     "low": 70.0,
-     "high": 70.0,
+     "median": 230.0,
+     "low": 230.0,
+     "high": 230.0,
      "rows": 1
     },
+    "grass_ton": null,
     "small_bale": null,
     "round_bale": null
    }
@@ -358,8 +353,8 @@
    "state": "Oklahoma",
    "path": "oklahoma",
    "slug": 3095,
-   "week_start": "2026-11-09",
-   "published": "2026-11-13",
+   "week_start": "2026-11-23",
+   "published": "2026-11-25",
    "stale": false,
    "summary": {
     "alfalfa_ton": {
@@ -381,10 +376,10 @@
      "rows": 1
     },
     "round_bale": {
-     "median": 67.5,
+     "median": 70.0,
      "low": 20.0,
      "high": 110.0,
-     "rows": 14
+     "rows": 15
     }
    }
   },
@@ -567,5 +562,5 @@
    }
   }
  ],
- "actualizado": "2026-11-25T21:04:20+00:00"
+ "actualizado": "2026-11-26T00:08:34+00:00"
 }

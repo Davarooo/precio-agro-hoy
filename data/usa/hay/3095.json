@@ -3,11 +3,11 @@
  "path": "oklahoma",
  "slug": 3095,
  "report_title": "Oklahoma Direct Hay Report",
- "week_start": "2026-11-09",
- "week_end": "2026-11-13",
- "published": "2026-11-13",
+ "week_start": "2026-11-23",
+ "week_end": "2026-11-27",
+ "published": "2026-11-25",
  "stale": false,
- "narrative": "Compared to the last report, demand for hay remains strong. Producers continue moving all types of hay in preparation for fall and winter months. However, hay movement has slowed slightly due to wheat pasture and recent rainfall. Additional rain is in the forecast, which should help improve wheat pasture and grass growth before cooler temperatures arrive. \n\n\nThe Oklahoma Mesonet Drought Monitor indicates that 2.52 percent of the state is experiencing exceptional drought, 22.44 percent is in extreme drought, 67.18 percent is in severe drought, 86.40 percent is in moderate drought, 96.87 percent is in abnormally dry conditions, and 3.13 percent has no drought conditions.\n\n\n*** The next report release will be on November 27th ***",
+ "narrative": "Compared to the last report, demand for hay remains strong, and trade is steady. Producers continue moving all types of hay. Cooler temperatures are slowly moving in. Pastures are slowly moving into dormancy as fall arrives.   \n\n\nThe Oklahoma Mesonet Drought Monitor (11/19/2026) indicates that 2.87 percent of the state is experiencing exceptional drought, 20.05 percent is in extreme drought, 61.63 percent is in severe drought, 84.59 percent is in moderate drought, 96.86 percent is in abnormally dry conditions, and 3.14 percent has no drought conditions.\n\n\n*** The next report release will be on December 11th ***",
  "source": "USDA AMS Market News",
  "source_url": "https://mymarketnews.ams.usda.gov/viewReport/3095",
  "summary": {
@@ -30,10 +30,10 @@
    "rows": 1
   },
   "round_bale": {
-   "median": 67.5,
+   "median": 70.0,
    "low": 20.0,
    "high": 110.0,
-   "rows": 14
+   "rows": 15
   }
  },
  "rows": [
@@ -234,6 +234,19 @@
   },
   {
    "region": "Northeast",
+   "hay": "Bluestem Grass",
+   "quality": "Premium",
+   "package": "Medium Round",
+   "sale": "Trade",
+   "unit": "Per Bale",
+   "low": 65.0,
+   "high": 65.0,
+   "avg": 65.0,
+   "freight": "F.O.B.",
+   "use": ""
+  },
+  {
+   "region": "Northeast",
    "hay": "Grass",
    "quality": "Premium",
    "package": "Large Round",
@@ -248,13 +261,13 @@
   {
    "region": "Northeast",
    "hay": "Prairie/Meadow Grass",
-   "quality": "Premium",
+   "quality": "Premium/Supreme",
    "package": "Medium Round",
    "sale": "Trade",
    "unit": "Per Bale",
-   "low": 65.0,
-   "high": 65.0,
-   "avg": 65.0,
+   "low": 75.0,
+   "high": 75.0,
+   "avg": 75.0,
    "freight": "F.O.B.",
    "use": ""
   },
@@ -350,5 +363,5 @@
    "use": ""
   }
  ],
- "actualizado": "2026-11-25T21:04:12+00:00"
+ "actualizado": "2026-11-26T00:08:25+00:00"
 }

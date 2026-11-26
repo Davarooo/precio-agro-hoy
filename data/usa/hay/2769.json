@@ -3,26 +3,21 @@
  "path": "montana",
  "slug": 2769,
  "report_title": "Montana Direct Hay Report",
- "week_start": "2026-11-09",
- "week_end": "2026-11-13",
- "published": "2026-11-13",
+ "week_start": "2026-11-23",
+ "week_end": "2026-11-27",
+ "published": "2026-11-25",
  "stale": false,
- "narrative": "Compared to last report(10-30-26): Hay sold generally steady. Demand for hay is mostly moderate. Supplies are mostly moderate. Hay sale have slowed drastically as warm weather and fall regrowth continue to keep cattle out on pastures and range. Many cattlemen report that they haven't had to feed any hay as a result. Several producers are wrapping up with 3rd or 4th cutting depending on location. Hay in the northern half of the state remains a discount to southern hay as sellers compete with hay coming out of Canada and across highway 2 from North Dakota. Fuel prices have started to retreat allowing delivered prices to ease slightly. Canadian hay continues to be delivered into Montana as excess hay supplies continue to be seen north of the border. Hay movement was very slow this session with many producers busy moving hay already sold this summer and earlier in the fall. According to the drought monitor 19.16% the state is in Moderate drought or worse, down 0.03% from 2 weeks ago. 9.09% of the state is in an Severe drought or worse, down 2.27% from 2 weeks ago. 3.17% of the state is in Extreme drought or worse, down 1.76% from 2 weeks ago. 0% of the state is in Expectational drought, unchanged from 2 weeks ago. Notably, 38.09% of the state is abnormally dry, up 1.49% from 2 weeks ago.",
+ "narrative": "Compared to last report(11-13-26): Hay sold generally steady. Demand for hay is mostly moderate. Supplies are mostly moderate. Hay sale have slowed drastically as warm weather and fall regrowth continue to keep cattle out on pastures and range. Many remain out on pasture and range despite some fall snow. Fall regrowth and warm weather coupled with early hay purchases have curbed hay demand over the last few weeks. Many cattlemen report that they still haven't had to feed any hay. Hay in the northern half of the state remains a discount to southern hay as sellers compete with hay coming out of Canada and across highway 2 from North Dakota. Fuel prices have started to retreat allowing delivered prices to ease slightly. Canadian hay continues to be delivered into Montana as excess hay supplies continue to be seen north of the border. Montana hay movement has been very slow this session with many producers busy moving hay already sold this summer and earlier in the fall. According to the drought monitor 24.59% the state is in Moderate drought or worse, up 5.43% from 2 weeks ago. 7.52% of the state is in an Severe drought or worse, down 1.57% from 2 weeks ago. 2.76% of the state is in Extreme drought or worse, down 0.41% from 2 weeks ago. 0% of the state is in Expectational drought, unchanged from 2 weeks ago. Notably, 35.81% of the state is abnormally dry, down 2.28% from 2 weeks ago.",
  "source": "USDA AMS Market News",
  "source_url": "https://mymarketnews.ams.usda.gov/viewReport/2769",
  "summary": {
   "alfalfa_ton": {
-   "median": 237.5,
-   "low": 235.0,
-   "high": 240.0,
-   "rows": 2
-  },
-  "grass_ton": {
-   "median": 70.0,
-   "low": 70.0,
-   "high": 70.0,
+   "median": 230.0,
+   "low": 230.0,
+   "high": 230.0,
    "rows": 1
   },
+  "grass_ton": null,
   "small_bale": null,
   "round_bale": null
  },
@@ -34,38 +29,12 @@
    "package": "Large Square 3x4",
    "sale": "Trade",
    "unit": "Per Ton",
-   "low": 235.0,
-   "high": 235.0,
-   "avg": 235.0,
-   "freight": "F.O.B.",
-   "use": ""
-  },
-  {
-   "region": "",
-   "hay": "Alfalfa",
-   "quality": "Premium",
-   "package": "Large Square 3x4",
-   "sale": "Trade",
-   "unit": "Per Ton",
-   "low": 240.0,
-   "high": 240.0,
-   "avg": 240.0,
-   "freight": "F.O.B.",
-   "use": ""
-  },
-  {
-   "region": "",
-   "hay": "Barley",
-   "quality": "",
-   "package": "Round",
-   "sale": "Trade",
-   "unit": "Per Ton",
-   "low": 70.0,
-   "high": 70.0,
-   "avg": 70.0,
+   "low": 230.0,
+   "high": 230.0,
+   "avg": 230.0,
    "freight": "F.O.B.",
    "use": ""
   }
  ],
- "actualizado": "2026-11-25T21:04:08+00:00"
+ "actualizado": "2026-11-26T00:08:21+00:00"
 }
