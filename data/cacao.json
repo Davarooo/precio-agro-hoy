@@ -1,7 +1,7 @@
 {
  "producto": "cacao",
- "fecha": "2026-11-25",
- "actualizado": "2026-11-26T23:54:53+00:00",
+ "fecha": "2026-11-26",
+ "actualizado": "2026-11-27T00:13:10+00:00",
  "fuente": "Futuros de cacao en la Bolsa de Nueva York (ICE) y tasas de cambio, vía CNBC",
  "contrato": "Cocoa (Mar'27)",
  "usd_tonelada": 5434.0,
@@ -39,6 +39,6 @@
    "precio_unidad": 19275.48
   }
  },
- "variacion_usd_tonelada": 21.0,
- "variacion_pct": 0.39
+ "variacion_usd_tonelada": 0.0,
+ "variacion_pct": 0.0
 }
